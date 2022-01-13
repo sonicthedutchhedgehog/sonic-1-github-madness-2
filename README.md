@@ -1,4 +1,4 @@
-s1disasm_git
+s1disasm_github madness
 ============
 
 The very (worst) Sonic 1 Disassembly. 
