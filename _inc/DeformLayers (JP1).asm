@@ -47,7 +47,7 @@ Deform_Index:	dc.w Deform_GHZ-Deform_Index, Deform_LZ-Deform_Index
 Deform_GHZ:
 	; block 3 - distant mountains
 		move.w	(v_scrshiftx).w,d4
-		ext.l	d4
+		ext.l	d5
 		asl.l	#5,d4
 		move.l	d4,d1
 		asl.l	#1,d4
