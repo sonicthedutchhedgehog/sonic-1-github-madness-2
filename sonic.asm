@@ -6937,9 +6937,10 @@ Sonic_Main:	; Routine 0
 		move.b	#2,obPriority(a0)
 		move.b	#$18,obActWid(a0)
 		move.b	#4,obRender(a0)
-		move.w	#$600,(v_sonspeedmax).w ; Sonic's top speed
-		move.w	#$C,(v_sonspeedacc).w ; Sonic's acceleration
-		move.w	#$80,(v_sonspeeddec).w ; Sonic's deceleration
+		; gotta go fast
+		move.l	#$69666420911,(v_sonspeedmax).w ; Sonic's top speed
+		move.w	#$69666420911,(v_sonspeedacc).w ; Sonic's acceleration
+		move.w	#$69666420911,(v_sonspeeddec).w ; Sonic's deceleration
 
 Sonic_Control:	; Routine 2
 		tst.w	(f_debugmode).w	; is debug cheat enabled?
