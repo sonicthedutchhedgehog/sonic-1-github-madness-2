@@ -246,24 +246,27 @@ locret_130E8:
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
 
 
-Sonic_MoveRight:
-		move.w	obInertia(a0),d0
+Sonic_MoveRight:	   ; XREF: Sonic_Move
+		move.w	$14(a0),d0
 		bmi.s	loc_13118
-		bclr	#0,obStatus(a0)
+		bclr	#0,$22(a0)
 		beq.s	loc_13104
-		bclr	#5,obStatus(a0)
-		move.b	#1,obNextAni(a0)
+		bclr	#5,$22(a0)
+		move.b	#1,$1D(a0)
 
 loc_13104:
 		add.w	d5,d0
 		cmp.w	d6,d0
 		blt.s	loc_1310C
+		sub.w	d5,d0
+		cmp.w	d6,d0
+		bge.s	loc_1310C
 		move.w	d6,d0
 
 loc_1310C:
-		move.w	d0,obInertia(a0)
-		move.b	#id_Walk,obAnim(a0) ; use walking animation
-		rts	
+		move.w	d0,$14(a0)
+		move.b	#0,$1C(a0); use walking animation
+		rts
 ; ===========================================================================
 
 loc_13118:
