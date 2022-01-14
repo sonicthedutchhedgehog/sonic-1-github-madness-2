@@ -146,10 +146,11 @@ loc_1BAF2:
 
 
 Obj09_MoveLeft:
-		bset	#0,obStatus(a0)
-		move.w	obInertia(a0),d0
-		beq.s	loc_1BB06
-		bpl.s	loc_1BB1A
+
+        sub.w #$10,(v_ssangle).w    ; TIS - include whatever value you'd like, tweak to desired rotation speed
+        rts    ;TIS     - Disable Sonic's left movement
+        bset    #0,obStatus(a0)
+        move.w    obInertia(a0),d0
 
 loc_1BB06:
 		subi.w	#$C,d0
@@ -177,13 +178,11 @@ loc_1BB22:
 
 
 Obj09_MoveRight:
-		bclr	#0,obStatus(a0)
-		move.w	obInertia(a0),d0
-		bmi.s	loc_1BB48
-		addi.w	#$C,d0
-		cmpi.w	#$800,d0
-		blt.s	loc_1BB42
-		move.w	#$800,d0
+
+        add.w #$10,(v_ssangle).w    ;TIS - include whatever value you'd like, tweak to desired rotation speed
+        rts      ;TIS - Disable Sonic's right movement
+        bclr    #0,obStatus(a0)
+        move.w    obInertia(a0),d0
 
 loc_1BB42:
 		move.w	d0,obInertia(a0)
@@ -207,25 +206,12 @@ locret_1BB54:
 
 
 Obj09_Jump:
-		move.b	(v_jpadpress2).w,d0
-		andi.b	#btnABC,d0	; is A,	B or C pressed?
-		beq.s	Obj09_NoJump	; if not, branch
-		move.b	(v_ssangle).w,d0
-		andi.b	#$FC,d0
-		neg.b	d0
-		subi.b	#$40,d0
-		jsr	(CalcSine).l
-		muls.w	#$680,d1
-		asr.l	#8,d1
-		move.w	d1,obVelX(a0)
-		muls.w	#$680,d0
-		asr.l	#8,d0
-		move.w	d0,obVelY(a0)
-		bset	#1,obStatus(a0)
-		sfx	sfx_Jump,0,0,0	; play jumping sound
+        rts    ;TIS - Disable Jump Routine
+        move.b    (v_jpadpress2).w,d0
+        andi.b    #btnABC,d0    ; is A,    B or C pressed?
 
 Obj09_NoJump:
-		rts	
+		rts
 ; End of function Obj09_Jump
 
 
