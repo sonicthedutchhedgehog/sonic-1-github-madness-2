@@ -1,35 +1,31 @@
-; ---------------------------------------------------------------------------
-; Sprite mappings - Moto Bug enemy (GHZ)
-; ---------------------------------------------------------------------------
-Map_Moto_internal:
-		dc.w .moto1-Map_Moto_internal
-		dc.w .moto2-Map_Moto_internal
-		dc.w .moto3-Map_Moto_internal
-		dc.w .smoke1-Map_Moto_internal
-		dc.w .smoke2-Map_Moto_internal
-		dc.w .smoke3-Map_Moto_internal
-		dc.w .blank-Map_Moto_internal
-.moto1:		dc.b 4
-		dc.b $F0, $D, 0, 0, $EC
-		dc.b 0,	$C, 0, 8, $EC
-		dc.b $F8, 1, 0,	$C, $C
-		dc.b 8,	8, 0, $E, $F4
-.moto2:		dc.b 4
-		dc.b $F1, $D, 0, 0, $EC
-		dc.b 1,	$C, 0, 8, $EC
-		dc.b $F9, 1, 0,	$C, $C
-		dc.b 9,	8, 0, $11, $F4
-.moto3:		dc.b 5
-		dc.b $F0, $D, 0, 0, $EC
-		dc.b 0,	$C, 0, $14, $EC
-		dc.b $F8, 1, 0,	$C, $C
-		dc.b 8,	4, 0, $18, $EC
-		dc.b 8,	4, 0, $12, $FC
-.smoke1:	dc.b 1
-		dc.b $FA, 0, 0,	$1A, $10
-.smoke2:	dc.b 1
-		dc.b $FA, 0, 0,	$1B, $10
-.smoke3:	dc.b 1
-		dc.b $FA, 0, 0,	$1C, $10
-.blank:		dc.b 0
-		even
+Map_d11a:
+Map_d11a_0: 	dc.w Map_d11a_E-Map_d11a
+Map_d11a_2: 	dc.w Map_d11a_23-Map_d11a
+Map_d11a_4: 	dc.w Map_d11a_38-Map_d11a
+Map_d11a_6: 	dc.w Map_d11a_4D-Map_d11a
+Map_d11a_8: 	dc.w Map_d11a_53-Map_d11a
+Map_d11a_A: 	dc.w Map_d11a_59-Map_d11a
+Map_d11a_C: 	dc.w Map_d11a_5F-Map_d11a
+Map_d11a_E: 	dc.b $4
+	dc.b $D8, $F, $8, $0, $F3
+	dc.b $F8, $E, $8, $10, $F3
+	dc.b $E0, $3, $8, $1C, $EB
+	dc.b $0, $1, $8, $20, $EB
+Map_d11a_23: 	dc.b $4
+	dc.b $D8, $F, $8, $0, $F3
+	dc.b $F8, $E, $8, $10, $F3
+	dc.b $E0, $3, $8, $1C, $EB
+	dc.b $0, $1, $8, $20, $EB
+Map_d11a_38: 	dc.b $4
+	dc.b $D8, $F, $8, $0, $F3
+	dc.b $F8, $E, $8, $10, $F3
+	dc.b $E0, $3, $8, $1C, $EB
+	dc.b $0, $1, $8, $20, $EB
+Map_d11a_4D: 	dc.b $1
+	dc.b $FA, $0, $0, $22, $10
+Map_d11a_53: 	dc.b $1
+	dc.b $FA, $0, $0, $23, $10
+Map_d11a_59: 	dc.b $1
+	dc.b $FA, $0, $0, $24, $10
+Map_d11a_5F: 	dc.b $0
+	even
