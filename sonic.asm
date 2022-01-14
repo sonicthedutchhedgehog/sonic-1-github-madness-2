@@ -5954,14 +5954,14 @@ M_Card_LZ:	dc.b 9			; LABYRINTH
 		dc.b $F8, 5, 0,	$1C, $34
 		even
 M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
-		dc.b $F8, 5, 0, $2E, $80	; N
-		dc.b $F8, 5, 0, $10, $90	; E
-		dc.b $F8, 5, 0, $32, $A0	; O
-		dc.b $F8, 0, 0, $56, $B0	; Space
-		dc.b $F8, 5, 0, $2A, $C0	; M
-		dc.b $F8, 1, 0, $20, $D0	; I
-		dc.b $F8, 5, 0, $26, $D8	; L
-		dc.b $F8, 5, 0, $22, $E8	; K
+		dc.b $F8, 5, 0, $2E, $B0	; N
+		dc.b $F8, 5, 0, $10, $C0	; E
+		dc.b $F8, 5, 0, $32, $D0	; O
+		dc.b $F8, 0, 0, $56, $E0	; Space
+		dc.b $F8, 5, 0, $2A, $F0	; M
+		dc.b $F8, 1, 0, $20, $00	; I
+		dc.b $F8, 5, 0, $26, $08	; L
+		dc.b $F8, 5, 0, $22, $16	; K
 		even
 M_Card_SLZ:	dc.b 9			; STAR LIGHT
 		dc.b $F8, 5, 0,	$3E, $B4
