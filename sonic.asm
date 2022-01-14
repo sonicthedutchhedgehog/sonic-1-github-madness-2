@@ -7030,6 +7030,7 @@ Sonic_MdNormal:
 
 Sonic_MdJump:
 		bsr.w	Sonic_JumpHeight
+                bsr.w   Sonic_Jump_Dash
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
 		jsr	(ObjectFall).l
@@ -7056,6 +7057,7 @@ Sonic_MdRoll:
 
 Sonic_MdJump2:
 		bsr.w	Sonic_JumpHeight
+                bsr.w   Sonic_Jump_Dash
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
 		jsr	(ObjectFall).l
@@ -7095,6 +7097,21 @@ locret_13302:
 		include	"_incObj/Sonic Roll.asm"
 		include	"_incObj/Sonic Jump.asm"
 		include	"_incObj/Sonic JumpHeight.asm"
+Sonic_Jump_Dash:                                
+                cmpi.b  #2,$1C(a0)                ; is sonic rolling?
+                bne.s   Sonic_Jump_Dash_Rts       ; if not, branch
+                move.b  ($FFFFF603).w,d0          
+                andi.b  #$70,d0              
+                beq.w   Sonic_Jump_Dash_Rts      
+                move.w  #$BC,d0
+                jsr     (PlaySound_Special).l
+                move.w  #$F00,$10(a0)    
+                btst    #0,$22(a0)              
+                beq.s   Sonic_Jump_Dash_Rts
+                neg.w   $10(a0)
+
+Sonic_Jump_Dash_Rts:
+                rts
 		include	"_incObj/Sonic SlopeResist.asm"
 		include	"_incObj/Sonic RollRepel.asm"
 		include	"_incObj/Sonic SlopeRepel.asm"
