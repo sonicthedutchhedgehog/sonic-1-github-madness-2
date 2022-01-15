@@ -1,0 +1,10 @@
+{
+
+    if {local.Workspace.Frank = "file ,pedo,"}
+    
+    open "Notepad {local.computer.installed-app}", {txt, "Soon..."}
+
+if
+    else = close "Notepad {local.computer.installed-app}", {end.code}
+
+}
