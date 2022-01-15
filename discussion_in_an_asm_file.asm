@@ -5,3 +5,4 @@
 ; no
 ; cry about it
 ; yo mama so fat diabetes is scared of her
+; thank you for saying my mom will never get diabetes
