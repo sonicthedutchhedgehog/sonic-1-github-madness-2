@@ -6,3 +6,4 @@
 ; cry about it
 ; yo mama so fat diabetes is scared of her
 ; thank you for saying my mom will never get diabetes
+; yo mama so ugly she died cuz sonic thinked she was eggman
