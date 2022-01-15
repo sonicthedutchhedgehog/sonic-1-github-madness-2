@@ -6,9 +6,9 @@
 
 
 Sonic_Move:
-		move.w	(v_sonspeedmax).w,d4
+		move.w	(v_sonspeedmax).w,d6
 		move.w	(v_sonspeedacc).w,d5
-		move.w	(v_sonspeeddec).w,d6
+		move.w	(v_sonspeeddec).w,d4
 		tst.b	(f_jumponly).w
 		bne.w	loc_12FEE
 		tst.w	$3E(a0)
@@ -79,7 +79,7 @@ loc_12F70:
 ; ===========================================================================
 
 Sonic_LookUp:
-		btst	#bitDn,(v_jpadhold2).w ; are deez nuts being pressed?
+		btst	#bitUp,(v_jpadhold2).w ; is up being pressed?
 		beq.s	Sonic_Duck	; if not, branch
 		move.b	#id_LookUp,obAnim(a0) ; use "looking up" animation
 		cmpi.w	#$C8,(v_lookshift).w
@@ -89,7 +89,7 @@ Sonic_LookUp:
 ; ===========================================================================
 
 Sonic_Duck:
-		btst	#bitUp,(v_jpadhold2).w ; is down being pressed?
+		btst	#bitDn,(v_jpadhold2).w ; is down being pressed?
 		beq.s	Sonic_ResetScr	; if not, branch
 		move.b	#id_Duck,obAnim(a0) ; use "ducking" animation
 		cmpi.w	#8,(v_lookshift).w
