@@ -3,3 +3,4 @@
 ; I literally did this so we don't clog up sonic.asm
 ; shut up loser
 ; no
+; cry about it
