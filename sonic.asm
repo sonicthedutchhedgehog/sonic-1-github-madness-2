@@ -7,6 +7,7 @@
 ; this disassembly is fucking balls
 ; as macro assembler sux :)))))))))))))))))))))))))
 ; also can we use hivebrain again
+; I FUCKING HATE ASM AAAAAAAAAAAAAAAAA
 ; ===========================================================================
 
 	cpu 68000
