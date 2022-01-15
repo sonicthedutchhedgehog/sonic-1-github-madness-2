@@ -4,3 +4,4 @@
 ; shut up loser
 ; no
 ; cry about it
+; yo mama so fat diabetes is scared of her
