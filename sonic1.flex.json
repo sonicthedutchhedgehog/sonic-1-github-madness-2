@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "eaa239c3-047f-44d4-a2f4-3f5ed13c29d5",
+    "node": "da472ab9-f363-45e6-8ee3-a83fd70d6d9c",
     "objects": [
         {
             "name": "Common",
@@ -10,7 +10,7 @@
                     "name": "Sonic",
                     "palettes": [
                         {
-                            "path": "..\\sanic poopy MAIN\\pallet\\sonic.bin",
+                            "path": "palette\\Sonic.bin",
                             "length": 1
                         }
                     ],
