@@ -12,6 +12,7 @@
 ; can someone please add asscar tts sprite somewhere hidden in the game?
 ;even if im the owner i still cant help yall lmao
 ; ok ig
+; also please go to the new asm file I created for discussions
 ; ==========================================================================
 
 	cpu 68000
