@@ -7027,6 +7027,7 @@ MusicList2:
 ; ---------------------------------------------------------------------------
 
 Sonic_MdNormal: bsr.w   SCDPeelout
+                bsr.w   SCDSpindash
 		bsr.w	Sonic_Jump
 		bsr.w	Sonic_SlopeResist
 		bsr.w	Sonic_Move
@@ -7106,6 +7107,7 @@ locret_13302:
 		include	"_incObj/Sonic LevelBound.asm"
 		include	"_incObj/Sonic Roll.asm"
                 include "peelout.asm"
+                include "SCDSpindash.asm"
 		include	"_incObj/Sonic Jump.asm"
 		include	"_incObj/Sonic JumpHeight.asm"
 Sonic_Jump_Dash:                                
