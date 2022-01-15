@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "9999eaa2-39c3-447f-94d4-22f43f5ed13c",
+    "node": "148b3085-fe2f-4400-8d25-0e813fb40ef0",
     "objects": [
         {
             "name": "Common",
@@ -1603,7 +1603,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "2c6bdae6-12ef-45be-81a2-ca5284d18ba2"
         },
         {
@@ -2046,7 +2046,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "59c71df9-6d67-4a04-a38a-0756b3511a57"
         },
         {
@@ -2431,7 +2431,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "a1e8ddd8-1c53-4e89-aa36-5cd177686c63"
         },
         {
@@ -2787,7 +2787,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "6c6337c4-6aa9-448b-b085-fe2f6400cd25"
         }
     ]
