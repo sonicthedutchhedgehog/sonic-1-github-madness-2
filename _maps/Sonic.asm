@@ -1,434 +1,434 @@
-Map_c629:
-Map_c629_0: 	dc.w Map_c629_B0-Map_c629
-Map_c629_2: 	dc.w Map_c629_B1-Map_c629
-Map_c629_4: 	dc.w Map_c629_BC-Map_c629
-Map_c629_6: 	dc.w Map_c629_CC-Map_c629
-Map_c629_8: 	dc.w Map_c629_DC-Map_c629
-Map_c629_A: 	dc.w Map_c629_EC-Map_c629
-Map_c629_C: 	dc.w Map_c629_FC-Map_c629
-Map_c629_E: 	dc.w Map_c629_111-Map_c629
-Map_c629_10: 	dc.w Map_c629_11C-Map_c629
-Map_c629_12: 	dc.w Map_c629_127-Map_c629
-Map_c629_14: 	dc.w Map_c629_13C-Map_c629
-Map_c629_16: 	dc.w Map_c629_147-Map_c629
-Map_c629_18: 	dc.w Map_c629_157-Map_c629
-Map_c629_1A: 	dc.w Map_c629_171-Map_c629
-Map_c629_1C: 	dc.w Map_c629_190-Map_c629
-Map_c629_1E: 	dc.w Map_c629_1A5-Map_c629
-Map_c629_20: 	dc.w Map_c629_1BF-Map_c629
-Map_c629_22: 	dc.w Map_c629_1D4-Map_c629
-Map_c629_24: 	dc.w Map_c629_1EE-Map_c629
-Map_c629_26: 	dc.w Map_c629_203-Map_c629
-Map_c629_28: 	dc.w Map_c629_20E-Map_c629
-Map_c629_2A: 	dc.w Map_c629_219-Map_c629
-Map_c629_2C: 	dc.w Map_c629_22E-Map_c629
-Map_c629_2E: 	dc.w Map_c629_239-Map_c629
-Map_c629_30: 	dc.w Map_c629_249-Map_c629
-Map_c629_32: 	dc.w Map_c629_268-Map_c629
-Map_c629_34: 	dc.w Map_c629_287-Map_c629
-Map_c629_36: 	dc.w Map_c629_29C-Map_c629
-Map_c629_38: 	dc.w Map_c629_2B6-Map_c629
-Map_c629_3A: 	dc.w Map_c629_2CB-Map_c629
-Map_c629_3C: 	dc.w Map_c629_2E5-Map_c629
-Map_c629_3E: 	dc.w Map_c629_2F0-Map_c629
-Map_c629_40: 	dc.w Map_c629_2FB-Map_c629
-Map_c629_42: 	dc.w Map_c629_306-Map_c629
-Map_c629_44: 	dc.w Map_c629_311-Map_c629
-Map_c629_46: 	dc.w Map_c629_326-Map_c629
-Map_c629_48: 	dc.w Map_c629_336-Map_c629
-Map_c629_4A: 	dc.w Map_c629_34B-Map_c629
-Map_c629_4C: 	dc.w Map_c629_35B-Map_c629
-Map_c629_4E: 	dc.w Map_c629_366-Map_c629
-Map_c629_50: 	dc.w Map_c629_371-Map_c629
-Map_c629_52: 	dc.w Map_c629_37C-Map_c629
-Map_c629_54: 	dc.w Map_c629_387-Map_c629
-Map_c629_56: 	dc.w Map_c629_39C-Map_c629
-Map_c629_58: 	dc.w Map_c629_3A7-Map_c629
-Map_c629_5A: 	dc.w Map_c629_3BC-Map_c629
-Map_c629_5C: 	dc.w Map_c629_3C7-Map_c629
-Map_c629_5E: 	dc.w Map_c629_3CD-Map_c629
-Map_c629_60: 	dc.w Map_c629_3D3-Map_c629
-Map_c629_62: 	dc.w Map_c629_3D9-Map_c629
-Map_c629_64: 	dc.w Map_c629_3DF-Map_c629
-Map_c629_66: 	dc.w Map_c629_3E5-Map_c629
-Map_c629_68: 	dc.w Map_c629_3F0-Map_c629
-Map_c629_6A: 	dc.w Map_c629_3F6-Map_c629
-Map_c629_6C: 	dc.w Map_c629_401-Map_c629
-Map_c629_6E: 	dc.w Map_c629_407-Map_c629
-Map_c629_70: 	dc.w Map_c629_412-Map_c629
-Map_c629_72: 	dc.w Map_c629_41D-Map_c629
-Map_c629_74: 	dc.w Map_c629_432-Map_c629
-Map_c629_76: 	dc.w Map_c629_442-Map_c629
-Map_c629_78: 	dc.w Map_c629_452-Map_c629
-Map_c629_7A: 	dc.w Map_c629_462-Map_c629
-Map_c629_7C: 	dc.w Map_c629_46D-Map_c629
-Map_c629_7E: 	dc.w Map_c629_47D-Map_c629
-Map_c629_80: 	dc.w Map_c629_48D-Map_c629
-Map_c629_82: 	dc.w Map_c629_49D-Map_c629
-Map_c629_84: 	dc.w Map_c629_4B2-Map_c629
-Map_c629_86: 	dc.w Map_c629_4C7-Map_c629
-Map_c629_88: 	dc.w Map_c629_4E1-Map_c629
-Map_c629_8A: 	dc.w Map_c629_4FB-Map_c629
-Map_c629_8C: 	dc.w Map_c629_506-Map_c629
-Map_c629_8E: 	dc.w Map_c629_516-Map_c629
-Map_c629_90: 	dc.w Map_c629_521-Map_c629
-Map_c629_92: 	dc.w Map_c629_531-Map_c629
-Map_c629_94: 	dc.w Map_c629_53C-Map_c629
-Map_c629_96: 	dc.w Map_c629_54C-Map_c629
-Map_c629_98: 	dc.w Map_c629_55C-Map_c629
-Map_c629_9A: 	dc.w Map_c629_576-Map_c629
-Map_c629_9C: 	dc.w Map_c629_590-Map_c629
-Map_c629_9E: 	dc.w Map_c629_59B-Map_c629
-Map_c629_A0: 	dc.w Map_c629_5AB-Map_c629
-Map_c629_A2: 	dc.w Map_c629_5B1-Map_c629
-Map_c629_A4: 	dc.w Map_c629_5B7-Map_c629
-Map_c629_A6: 	dc.w Map_c629_5BD-Map_c629
-Map_c629_A8: 	dc.w Map_c629_5CD-Map_c629
-Map_c629_AA: 	dc.w Map_c629_5DD-Map_c629
-Map_c629_AC: 	dc.w Map_c629_5ED-Map_c629
-Map_c629_AE: 	dc.w Map_c629_5FD-Map_c629
-Map_c629_B0: 	dc.b $0
-Map_c629_B1: 	dc.b $2
+Map_6979:
+Map_6979_0: 	dc.w Map_6979_B0-Map_6979
+Map_6979_2: 	dc.w Map_6979_B1-Map_6979
+Map_6979_4: 	dc.w Map_6979_BC-Map_6979
+Map_6979_6: 	dc.w Map_6979_CC-Map_6979
+Map_6979_8: 	dc.w Map_6979_DC-Map_6979
+Map_6979_A: 	dc.w Map_6979_EC-Map_6979
+Map_6979_C: 	dc.w Map_6979_FC-Map_6979
+Map_6979_E: 	dc.w Map_6979_111-Map_6979
+Map_6979_10: 	dc.w Map_6979_11C-Map_6979
+Map_6979_12: 	dc.w Map_6979_127-Map_6979
+Map_6979_14: 	dc.w Map_6979_13C-Map_6979
+Map_6979_16: 	dc.w Map_6979_147-Map_6979
+Map_6979_18: 	dc.w Map_6979_157-Map_6979
+Map_6979_1A: 	dc.w Map_6979_171-Map_6979
+Map_6979_1C: 	dc.w Map_6979_190-Map_6979
+Map_6979_1E: 	dc.w Map_6979_1A5-Map_6979
+Map_6979_20: 	dc.w Map_6979_1BF-Map_6979
+Map_6979_22: 	dc.w Map_6979_1D4-Map_6979
+Map_6979_24: 	dc.w Map_6979_1EE-Map_6979
+Map_6979_26: 	dc.w Map_6979_203-Map_6979
+Map_6979_28: 	dc.w Map_6979_20E-Map_6979
+Map_6979_2A: 	dc.w Map_6979_219-Map_6979
+Map_6979_2C: 	dc.w Map_6979_22E-Map_6979
+Map_6979_2E: 	dc.w Map_6979_239-Map_6979
+Map_6979_30: 	dc.w Map_6979_249-Map_6979
+Map_6979_32: 	dc.w Map_6979_268-Map_6979
+Map_6979_34: 	dc.w Map_6979_287-Map_6979
+Map_6979_36: 	dc.w Map_6979_29C-Map_6979
+Map_6979_38: 	dc.w Map_6979_2B6-Map_6979
+Map_6979_3A: 	dc.w Map_6979_2CB-Map_6979
+Map_6979_3C: 	dc.w Map_6979_2E5-Map_6979
+Map_6979_3E: 	dc.w Map_6979_2F0-Map_6979
+Map_6979_40: 	dc.w Map_6979_2FB-Map_6979
+Map_6979_42: 	dc.w Map_6979_306-Map_6979
+Map_6979_44: 	dc.w Map_6979_311-Map_6979
+Map_6979_46: 	dc.w Map_6979_326-Map_6979
+Map_6979_48: 	dc.w Map_6979_336-Map_6979
+Map_6979_4A: 	dc.w Map_6979_34B-Map_6979
+Map_6979_4C: 	dc.w Map_6979_35B-Map_6979
+Map_6979_4E: 	dc.w Map_6979_366-Map_6979
+Map_6979_50: 	dc.w Map_6979_371-Map_6979
+Map_6979_52: 	dc.w Map_6979_37C-Map_6979
+Map_6979_54: 	dc.w Map_6979_387-Map_6979
+Map_6979_56: 	dc.w Map_6979_39C-Map_6979
+Map_6979_58: 	dc.w Map_6979_3A7-Map_6979
+Map_6979_5A: 	dc.w Map_6979_3BC-Map_6979
+Map_6979_5C: 	dc.w Map_6979_3C7-Map_6979
+Map_6979_5E: 	dc.w Map_6979_3CD-Map_6979
+Map_6979_60: 	dc.w Map_6979_3D3-Map_6979
+Map_6979_62: 	dc.w Map_6979_3D9-Map_6979
+Map_6979_64: 	dc.w Map_6979_3DF-Map_6979
+Map_6979_66: 	dc.w Map_6979_3E5-Map_6979
+Map_6979_68: 	dc.w Map_6979_3F0-Map_6979
+Map_6979_6A: 	dc.w Map_6979_3F6-Map_6979
+Map_6979_6C: 	dc.w Map_6979_401-Map_6979
+Map_6979_6E: 	dc.w Map_6979_407-Map_6979
+Map_6979_70: 	dc.w Map_6979_412-Map_6979
+Map_6979_72: 	dc.w Map_6979_41D-Map_6979
+Map_6979_74: 	dc.w Map_6979_432-Map_6979
+Map_6979_76: 	dc.w Map_6979_442-Map_6979
+Map_6979_78: 	dc.w Map_6979_452-Map_6979
+Map_6979_7A: 	dc.w Map_6979_462-Map_6979
+Map_6979_7C: 	dc.w Map_6979_46D-Map_6979
+Map_6979_7E: 	dc.w Map_6979_47D-Map_6979
+Map_6979_80: 	dc.w Map_6979_48D-Map_6979
+Map_6979_82: 	dc.w Map_6979_49D-Map_6979
+Map_6979_84: 	dc.w Map_6979_4B2-Map_6979
+Map_6979_86: 	dc.w Map_6979_4C7-Map_6979
+Map_6979_88: 	dc.w Map_6979_4E1-Map_6979
+Map_6979_8A: 	dc.w Map_6979_4FB-Map_6979
+Map_6979_8C: 	dc.w Map_6979_506-Map_6979
+Map_6979_8E: 	dc.w Map_6979_516-Map_6979
+Map_6979_90: 	dc.w Map_6979_521-Map_6979
+Map_6979_92: 	dc.w Map_6979_531-Map_6979
+Map_6979_94: 	dc.w Map_6979_53C-Map_6979
+Map_6979_96: 	dc.w Map_6979_54C-Map_6979
+Map_6979_98: 	dc.w Map_6979_55C-Map_6979
+Map_6979_9A: 	dc.w Map_6979_576-Map_6979
+Map_6979_9C: 	dc.w Map_6979_590-Map_6979
+Map_6979_9E: 	dc.w Map_6979_59B-Map_6979
+Map_6979_A0: 	dc.w Map_6979_5AB-Map_6979
+Map_6979_A2: 	dc.w Map_6979_5B1-Map_6979
+Map_6979_A4: 	dc.w Map_6979_5B7-Map_6979
+Map_6979_A6: 	dc.w Map_6979_5BD-Map_6979
+Map_6979_A8: 	dc.w Map_6979_5CD-Map_6979
+Map_6979_AA: 	dc.w Map_6979_5DD-Map_6979
+Map_6979_AC: 	dc.w Map_6979_5ED-Map_6979
+Map_6979_AE: 	dc.w Map_6979_5FD-Map_6979
+Map_6979_B0: 	dc.b $0
+Map_6979_B1: 	dc.b $2
 	dc.b $ED, $B, $0, $0, $F4
 	dc.b $D, $8, $0, $C, $F4
-Map_c629_BC: 	dc.b $3
+Map_6979_BC: 	dc.b $3
 	dc.b $EC, $9, $0, $0, $F0
 	dc.b $FC, $9, $0, $6, $F0
 	dc.b $C, $8, $0, $C, $F8
-Map_c629_CC: 	dc.b $3
+Map_6979_CC: 	dc.b $3
 	dc.b $EC, $9, $0, $0, $F0
 	dc.b $FC, $9, $0, $6, $F0
 	dc.b $C, $8, $0, $C, $F8
-Map_c629_DC: 	dc.b $3
+Map_6979_DC: 	dc.b $3
 	dc.b $EC, $9, $0, $0, $F0
 	dc.b $FC, $9, $0, $6, $F0
 	dc.b $C, $8, $0, $C, $F8
-Map_c629_EC: 	dc.b $3
+Map_6979_EC: 	dc.b $3
 	dc.b $EC, $A, $0, $0, $F0
 	dc.b $4, $8, $0, $9, $F0
 	dc.b $C, $8, $0, $C, $F8
-Map_c629_FC: 	dc.b $4
+Map_6979_FC: 	dc.b $4
 	dc.b $EB, $D, $0, $0, $EC
 	dc.b $FB, $9, $0, $8, $EC
 	dc.b $FB, $6, $0, $E, $4
 	dc.b $B, $4, $0, $14, $EC
-Map_c629_111: 	dc.b $2
+Map_6979_111: 	dc.b $2
 	dc.b $EC, $D, $0, $0, $ED
 	dc.b $FC, $E, $0, $8, $F5
-Map_c629_11C: 	dc.b $2
+Map_6979_11C: 	dc.b $2
 	dc.b $ED, $9, $0, $0, $F3
 	dc.b $FD, $A, $0, $6, $F3
-Map_c629_127: 	dc.b $4
+Map_6979_127: 	dc.b $4
 	dc.b $EB, $9, $0, $0, $F4
 	dc.b $FB, $9, $0, $6, $EC
 	dc.b $FB, $6, $0, $C, $4
 	dc.b $B, $4, $0, $12, $EC
-Map_c629_13C: 	dc.b $2
+Map_6979_13C: 	dc.b $2
 	dc.b $EC, $9, $0, $0, $F3
 	dc.b $FC, $E, $0, $6, $EB
-Map_c629_147: 	dc.b $3
+Map_6979_147: 	dc.b $3
 	dc.b $ED, $D, $0, $0, $EC
 	dc.b $FD, $C, $0, $8, $F4
 	dc.b $5, $9, $0, $C, $F4
-Map_c629_157: 	dc.b $5
+Map_6979_157: 	dc.b $5
 	dc.b $EB, $9, $0, $0, $EB
 	dc.b $EB, $6, $0, $6, $3
 	dc.b $FB, $8, $0, $C, $EB
 	dc.b $3, $9, $0, $F, $F3
 	dc.b $13, $0, $0, $15, $FB
-Map_c629_171: 	dc.b $6
+Map_6979_171: 	dc.b $6
 	dc.b $EC, $9, $0, $0, $EC
 	dc.b $EC, $1, $0, $6, $4
 	dc.b $FC, $C, $0, $8, $EC
 	dc.b $4, $9, $0, $C, $F4
 	dc.b $FC, $5, $0, $12, $C
 	dc.b $F4, $0, $0, $16, $14
-Map_c629_190: 	dc.b $4
+Map_6979_190: 	dc.b $4
 	dc.b $ED, $9, $0, $0, $ED
 	dc.b $ED, $1, $0, $6, $5
 	dc.b $FD, $D, $0, $8, $F5
 	dc.b $D, $8, $0, $10, $FD
-Map_c629_1A5: 	dc.b $5
+Map_6979_1A5: 	dc.b $5
 	dc.b $EB, $9, $0, $0, $EB
 	dc.b $EB, $5, $0, $6, $3
 	dc.b $FB, $D, $0, $A, $F3
 	dc.b $B, $8, $0, $12, $F3
 	dc.b $13, $4, $0, $15, $FB
-Map_c629_1BF: 	dc.b $4
+Map_6979_1BF: 	dc.b $4
 	dc.b $EC, $9, $0, $0, $EC
 	dc.b $EC, $1, $0, $6, $4
 	dc.b $FC, $D, $0, $8, $F4
 	dc.b $C, $8, $0, $10, $FC
-Map_c629_1D4: 	dc.b $5
+Map_6979_1D4: 	dc.b $5
 	dc.b $ED, $9, $0, $0, $ED
 	dc.b $ED, $1, $0, $6, $5
 	dc.b $FD, $0, $0, $8, $ED
 	dc.b $FD, $D, $0, $9, $F5
 	dc.b $D, $8, $0, $11, $FD
-Map_c629_1EE: 	dc.b $4
+Map_6979_1EE: 	dc.b $4
 	dc.b $F4, $7, $0, $0, $EB
 	dc.b $EC, $9, $0, $8, $FB
 	dc.b $FC, $4, $0, $E, $FB
 	dc.b $4, $9, $0, $10, $FB
-Map_c629_203: 	dc.b $2
+Map_6979_203: 	dc.b $2
 	dc.b $F4, $7, $0, $0, $EC
 	dc.b $EC, $B, $0, $8, $FC
-Map_c629_20E: 	dc.b $2
+Map_6979_20E: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $ED
 	dc.b $F4, $A, $0, $6, $FD
-Map_c629_219: 	dc.b $4
+Map_6979_219: 	dc.b $4
 	dc.b $F4, $6, $0, $0, $EB
 	dc.b $EC, $9, $0, $6, $FB
 	dc.b $FC, $4, $0, $C, $FB
 	dc.b $4, $9, $0, $E, $FB
-Map_c629_22E: 	dc.b $2
+Map_6979_22E: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $EC
 	dc.b $F4, $B, $0, $6, $FC
-Map_c629_239: 	dc.b $3
+Map_6979_239: 	dc.b $3
 	dc.b $F4, $7, $0, $0, $ED
 	dc.b $EC, $0, $0, $8, $FD
 	dc.b $F4, $A, $0, $9, $FD
-Map_c629_249: 	dc.b $6
+Map_6979_249: 	dc.b $6
 	dc.b $FD, $6, $0, $0, $EB
 	dc.b $ED, $4, $0, $6, $F3
 	dc.b $F5, $4, $0, $8, $EB
 	dc.b $F5, $A, $0, $A, $FB
 	dc.b $D, $0, $0, $13, $FB
 	dc.b $FD, $0, $0, $14, $13
-Map_c629_268: 	dc.b $6
+Map_6979_268: 	dc.b $6
 	dc.b $FC, $6, $0, $0, $EC
 	dc.b $E4, $8, $0, $6, $F4
 	dc.b $EC, $4, $0, $9, $FC
 	dc.b $F4, $4, $0, $B, $EC
 	dc.b $F4, $A, $0, $D, $FC
 	dc.b $C, $0, $0, $16, $FC
-Map_c629_287: 	dc.b $4
+Map_6979_287: 	dc.b $4
 	dc.b $FB, $6, $0, $0, $ED
 	dc.b $F3, $4, $0, $6, $ED
 	dc.b $EB, $A, $0, $8, $FD
 	dc.b $3, $4, $0, $11, $FD
-Map_c629_29C: 	dc.b $5
+Map_6979_29C: 	dc.b $5
 	dc.b $FD, $6, $0, $0, $EB
 	dc.b $ED, $8, $0, $6, $F3
 	dc.b $F5, $4, $0, $9, $EB
 	dc.b $F5, $D, $0, $B, $FB
 	dc.b $5, $8, $0, $13, $FB
-Map_c629_2B6: 	dc.b $4
+Map_6979_2B6: 	dc.b $4
 	dc.b $FC, $6, $0, $0, $EC
 	dc.b $F4, $4, $0, $6, $EC
 	dc.b $EC, $A, $0, $8, $FC
 	dc.b $4, $4, $0, $11, $FC
-Map_c629_2CB: 	dc.b $5
+Map_6979_2CB: 	dc.b $5
 	dc.b $FB, $6, $0, $0, $ED
 	dc.b $EB, $A, $0, $6, $FD
 	dc.b $F3, $4, $0, $F, $ED
 	dc.b $3, $4, $0, $11, $FD
 	dc.b $B, $0, $0, $13, $FD
-Map_c629_2E5: 	dc.b $2
+Map_6979_2E5: 	dc.b $2
 	dc.b $EE, $9, $0, $0, $F4
 	dc.b $FE, $E, $0, $6, $EC
-Map_c629_2F0: 	dc.b $2
+Map_6979_2F0: 	dc.b $2
 	dc.b $EE, $9, $0, $0, $F4
 	dc.b $FE, $E, $0, $6, $EC
-Map_c629_2FB: 	dc.b $2
+Map_6979_2FB: 	dc.b $2
 	dc.b $EE, $9, $0, $0, $F4
 	dc.b $FE, $E, $0, $6, $EC
-Map_c629_306: 	dc.b $2
+Map_6979_306: 	dc.b $2
 	dc.b $EE, $9, $0, $0, $F4
 	dc.b $FE, $E, $0, $6, $EC
-Map_c629_311: 	dc.b $4
+Map_6979_311: 	dc.b $4
 	dc.b $EE, $9, $0, $0, $EE
 	dc.b $EE, $1, $0, $6, $6
 	dc.b $FE, $E, $0, $8, $F6
 	dc.b $FE, $0, $0, $14, $EE
-Map_c629_326: 	dc.b $3
+Map_6979_326: 	dc.b $3
 	dc.b $EE, $9, $0, $0, $EE
 	dc.b $EE, $1, $0, $6, $6
 	dc.b $FE, $E, $0, $8, $F6
-Map_c629_336: 	dc.b $4
+Map_6979_336: 	dc.b $4
 	dc.b $EE, $9, $0, $0, $EE
 	dc.b $EE, $1, $0, $6, $6
 	dc.b $FE, $E, $0, $8, $F6
 	dc.b $FE, $0, $0, $14, $EE
-Map_c629_34B: 	dc.b $3
+Map_6979_34B: 	dc.b $3
 	dc.b $EE, $9, $0, $0, $EE
 	dc.b $EE, $1, $0, $6, $6
 	dc.b $FE, $E, $0, $8, $F6
-Map_c629_35B: 	dc.b $2
+Map_6979_35B: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $EE
 	dc.b $F4, $B, $0, $6, $FE
-Map_c629_366: 	dc.b $2
+Map_6979_366: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $EE
 	dc.b $F4, $B, $0, $6, $FE
-Map_c629_371: 	dc.b $2
+Map_6979_371: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $EE
 	dc.b $F4, $B, $0, $6, $FE
-Map_c629_37C: 	dc.b $2
+Map_6979_37C: 	dc.b $2
 	dc.b $F4, $6, $0, $0, $EE
 	dc.b $F4, $B, $0, $6, $FE
-Map_c629_387: 	dc.b $4
+Map_6979_387: 	dc.b $4
 	dc.b $FA, $6, $0, $0, $EE
 	dc.b $F2, $4, $0, $6, $EE
 	dc.b $EA, $B, $0, $8, $FE
 	dc.b $A, $0, $0, $14, $FE
-Map_c629_39C: 	dc.b $2
+Map_6979_39C: 	dc.b $2
 	dc.b $F2, $7, $0, $0, $EE
 	dc.b $EA, $B, $0, $8, $FE
-Map_c629_3A7: 	dc.b $4
+Map_6979_3A7: 	dc.b $4
 	dc.b $FA, $6, $0, $0, $EE
 	dc.b $F2, $4, $0, $6, $EE
 	dc.b $EA, $B, $0, $8, $FE
 	dc.b $A, $0, $0, $14, $FE
-Map_c629_3BC: 	dc.b $2
+Map_6979_3BC: 	dc.b $2
 	dc.b $F2, $7, $0, $0, $EE
 	dc.b $EA, $B, $0, $8, $FE
-Map_c629_3C7: 	dc.b $1
+Map_6979_3C7: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3CD: 	dc.b $1
+Map_6979_3CD: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3D3: 	dc.b $1
+Map_6979_3D3: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3D9: 	dc.b $1
+Map_6979_3D9: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3DF: 	dc.b $1
+Map_6979_3DF: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3E5: 	dc.b $2
+Map_6979_3E5: 	dc.b $2
 	dc.b $F4, $E, $0, $0, $EC
 	dc.b $F4, $2, $0, $C, $C
-Map_c629_3F0: 	dc.b $1
+Map_6979_3F0: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_3F6: 	dc.b $2
+Map_6979_3F6: 	dc.b $2
 	dc.b $EC, $B, $0, $0, $F4
 	dc.b $C, $8, $0, $C, $F4
-Map_c629_401: 	dc.b $1
+Map_6979_401: 	dc.b $1
 	dc.b $F0, $F, $0, $0, $F0
-Map_c629_407: 	dc.b $2
+Map_6979_407: 	dc.b $2
 	dc.b $ED, $9, $0, $0, $F0
 	dc.b $FD, $E, $0, $6, $F0
-Map_c629_412: 	dc.b $2
+Map_6979_412: 	dc.b $2
 	dc.b $ED, $9, $0, $0, $F0
 	dc.b $FD, $E, $0, $6, $F0
-Map_c629_41D: 	dc.b $4
+Map_6979_41D: 	dc.b $4
 	dc.b $F4, $4, $0, $0, $FC
 	dc.b $FC, $D, $0, $2, $F4
 	dc.b $C, $8, $0, $A, $F4
 	dc.b $4, $0, $0, $D, $EC
-Map_c629_432: 	dc.b $3
+Map_6979_432: 	dc.b $3
 	dc.b $EC, $8, $8, $0, $E8
 	dc.b $F4, $2, $8, $3, $0
 	dc.b $F4, $F, $8, $6, $E0
-Map_c629_442: 	dc.b $3
+Map_6979_442: 	dc.b $3
 	dc.b $EC, $E, $8, $0, $E8
 	dc.b $4, $D, $8, $C, $E0
 	dc.b $C, $0, $18, $14, $0
-Map_c629_452: 	dc.b $3
+Map_6979_452: 	dc.b $3
 	dc.b $F4, $D, $0, $0, $FC
 	dc.b $FC, $5, $0, $8, $EC
 	dc.b $4, $8, $0, $C, $FC
-Map_c629_462: 	dc.b $2
+Map_6979_462: 	dc.b $2
 	dc.b $F4, $A, $0, $0, $E8
 	dc.b $F4, $A, $8, $0, $0
-Map_c629_46D: 	dc.b $3
+Map_6979_46D: 	dc.b $3
 	dc.b $F4, $D, $0, $0, $E4
 	dc.b $FC, $0, $0, $8, $4
 	dc.b $4, $C, $0, $9, $EC
-Map_c629_47D: 	dc.b $3
+Map_6979_47D: 	dc.b $3
 	dc.b $F8, $B, $D8, $0, $F0
 	dc.b $F0, $4, $D8, $C, $F0
 	dc.b $E8, $0, $D8, $E, $F8
-Map_c629_48D: 	dc.b $3
+Map_6979_48D: 	dc.b $3
 	dc.b $F4, $D, $0, $0, $FC
 	dc.b $FC, $5, $0, $8, $EC
 	dc.b $4, $8, $0, $C, $FC
-Map_c629_49D: 	dc.b $4
+Map_6979_49D: 	dc.b $4
 	dc.b $F8, $E, $0, $0, $E8
 	dc.b $0, $5, $0, $C, $8
 	dc.b $F8, $0, $0, $10, $8
 	dc.b $F0, $0, $0, $11, $F8
-Map_c629_4B2: 	dc.b $4
+Map_6979_4B2: 	dc.b $4
 	dc.b $F8, $E, $0, $0, $E8
 	dc.b $0, $5, $0, $C, $8
 	dc.b $F8, $0, $0, $10, $8
 	dc.b $F0, $0, $0, $11, $F8
-Map_c629_4C7: 	dc.b $5
+Map_6979_4C7: 	dc.b $5
 	dc.b $E8, $A, $0, $0, $F4
 	dc.b $F0, $1, $0, $9, $C
 	dc.b $0, $9, $0, $B, $F4
 	dc.b $10, $4, $0, $11, $F4
 	dc.b $0, $0, $0, $13, $EC
-Map_c629_4E1: 	dc.b $5
+Map_6979_4E1: 	dc.b $5
 	dc.b $E8, $A, $0, $0, $F4
 	dc.b $E8, $1, $0, $9, $C
 	dc.b $0, $9, $0, $B, $F4
 	dc.b $10, $4, $0, $11, $F4
 	dc.b $0, $0, $0, $13, $EC
-Map_c629_4FB: 	dc.b $2
+Map_6979_4FB: 	dc.b $2
 	dc.b $ED, $A, $0, $0, $F3
 	dc.b $5, $D, $0, $9, $EB
-Map_c629_506: 	dc.b $3
+Map_6979_506: 	dc.b $3
 	dc.b $EC, $A, $0, $0, $F3
 	dc.b $4, $8, $0, $9, $F3
 	dc.b $C, $4, $0, $C, $F3
-Map_c629_516: 	dc.b $2
+Map_6979_516: 	dc.b $2
 	dc.b $ED, $A, $0, $0, $F3
 	dc.b $5, $D, $0, $9, $EB
-Map_c629_521: 	dc.b $3
+Map_6979_521: 	dc.b $3
 	dc.b $EC, $A, $0, $0, $F3
 	dc.b $4, $8, $0, $9, $F3
 	dc.b $C, $4, $0, $C, $F3
-Map_c629_531: 	dc.b $2
+Map_6979_531: 	dc.b $2
 	dc.b $EC, $9, $0, $0, $F0
 	dc.b $FC, $E, $0, $6, $F0
-Map_c629_53C: 	dc.b $3
+Map_6979_53C: 	dc.b $3
 	dc.b $EC, $A, $0, $0, $F0
 	dc.b $4, $5, $0, $9, $F8
 	dc.b $E4, $0, $0, $D, $F8
-Map_c629_54C: 	dc.b $3
+Map_6979_54C: 	dc.b $3
 	dc.b $E8, $D, $0, $0, $EC
 	dc.b $E8, $1, $0, $8, $C
 	dc.b $F8, $B, $0, $A, $F4
-Map_c629_55C: 	dc.b $5
+Map_6979_55C: 	dc.b $5
 	dc.b $E8, $D, $0, $0, $EC
 	dc.b $E8, $1, $0, $8, $C
 	dc.b $F8, $9, $0, $A, $F4
 	dc.b $8, $C, $0, $10, $F4
 	dc.b $10, $0, $0, $14, $F4
-Map_c629_576: 	dc.b $5
+Map_6979_576: 	dc.b $5
 	dc.b $E8, $D, $0, $0, $EC
 	dc.b $E8, $1, $0, $8, $C
 	dc.b $F8, $9, $0, $A, $F4
 	dc.b $8, $C, $0, $10, $F4
 	dc.b $10, $0, $0, $14, $F4
-Map_c629_590: 	dc.b $2
+Map_6979_590: 	dc.b $2
 	dc.b $EC, $8, $0, $0, $F0
 	dc.b $F4, $F, $0, $3, $F0
-Map_c629_59B: 	dc.b $3
+Map_6979_59B: 	dc.b $3
 	dc.b $EC, $8, $0, $0, $F0
 	dc.b $F4, $E, $0, $3, $F0
 	dc.b $C, $8, $0, $F, $F8
-Map_c629_5AB: 	dc.b $1
+Map_6979_5AB: 	dc.b $1
 	dc.b $F0, $B, $0, $0, $F4
-Map_c629_5B1: 	dc.b $1
+Map_6979_5B1: 	dc.b $1
 	dc.b $F4, $6, $0, $0, $F8
-Map_c629_5B7: 	dc.b $1
+Map_6979_5B7: 	dc.b $1
 	dc.b $F8, $1, $0, $0, $FC
-Map_c629_5BD: 	dc.b $3
+Map_6979_5BD: 	dc.b $3
 	dc.b $F4, $D, $8, $0, $E4
 	dc.b $FC, $5, $8, $8, $4
 	dc.b $4, $8, $8, $C, $EC
-Map_c629_5CD: 	dc.b $3
+Map_6979_5CD: 	dc.b $3
 	dc.b $F4, $D, $8, $0, $FC
 	dc.b $FC, $0, $8, $8, $F4
 	dc.b $4, $C, $8, $9, $F4
-Map_c629_5DD: 	dc.b $3
+Map_6979_5DD: 	dc.b $3
 	dc.b $F0, $E, $0, $0, $EC
 	dc.b $F8, $1, $0, $C, $C
 	dc.b $8, $C, $0, $E, $F4
-Map_c629_5ED: 	dc.b $3
+Map_6979_5ED: 	dc.b $3
 	dc.b $EB, $9, $0, $0, $F4
 	dc.b $FB, $E, $0, $6, $EC
 	dc.b $3, $1, $0, $12, $C
-Map_c629_5FD: 	dc.b $2
+Map_6979_5FD: 	dc.b $2
 	dc.b $F0, $F, $0, $0, $EC
 	dc.b $F8, $2, $0, $10, $C
 	even
