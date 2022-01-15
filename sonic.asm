@@ -7,8 +7,10 @@
 ; this disassembly is fucking balls
 ; as macro assembler sux :)))))))))))))))))))))))))
 ; also can we use hivebrain again
+;no
 ; I FUCKING HATE ASM AAAAAAAAAAAAAAAAA
 ; can someone please add asscar tts sprite somewhere hidden in the game?
+;even if im the owner i still cant help yall lmao
 ; ==========================================================================
 
 	cpu 68000
