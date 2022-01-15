@@ -5,6 +5,8 @@
 ; Disassembly created by Hivebrain
 ; thanks to drx, Stealth and Esrael L.G. Neto
 ; this disassembly is fucking balls
+; as macro assembler sux :)))))))))))))))))))))))))
+; also can we use hivebrain again
 ; ===========================================================================
 
 	cpu 68000
