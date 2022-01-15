@@ -2326,7 +2326,7 @@ Tit_ChkLevSel:
 		beq.w	PlayLevel	; if not, play level
 		btst	#bitA,(v_jpadhold1).w ; check if A is pressed
 		beq.w	PlayLevel	; if not, play level
-
+                jmp    (Level_Select_Menu).l    ; if yes, go to Sonic 2 level select  
 		moveq	#palid_LevelSel,d0
 		bsr.w	PalLoad2	; load level select palette
 		lea	(v_hscrolltablebuffer).w,a1
@@ -9327,6 +9327,6 @@ SoundDriver:	include "s1.sounddriver.asm"
 
 ; end of 'ROM'
 		even
-EndOfRom:
+EndOfRom:    include "s2_menu.asm"
 
 		END
