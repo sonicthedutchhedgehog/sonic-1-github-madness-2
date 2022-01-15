@@ -11,6 +11,7 @@
 ; I FUCKING HATE ASM AAAAAAAAAAAAAAAAA
 ; can someone please add asscar tts sprite somewhere hidden in the game?
 ;even if im the owner i still cant help yall lmao
+; ok ig
 ; ==========================================================================
 
 	cpu 68000
