@@ -1,31 +1,28 @@
-; ---------------------------------------------------------------------------
-; Sprite mappings - lamppost
-; ---------------------------------------------------------------------------
-Map_Lamp_internal:
-		dc.w .blue-Map_Lamp_internal
-		dc.w .poleonly-Map_Lamp_internal
-		dc.w .redballonly-Map_Lamp_internal
-		dc.w .red-Map_Lamp_internal
-.blue:		dc.b 6
-		dc.b $E4, 1, 0,	0, $F8
-		dc.b $E4, 1, 8,	0, 0
-		dc.b $F4, 3, $20, 2, $F8
-		dc.b $F4, 3, $28, 2, 0
-		dc.b $D4, 1, 0,	6, $F8
-		dc.b $D4, 1, 8,	6, 0
-.poleonly:	dc.b 4
-		dc.b $E4, 1, 0,	0, $F8
-		dc.b $E4, 1, 8,	0, 0
-		dc.b $F4, 3, $20, 2, $F8
-		dc.b $F4, 3, $28, 2, 0
-.redballonly:	dc.b 2
-		dc.b $F8, 1, 0,	8, $F8
-		dc.b $F8, 1, 8,	8, 0
-.red:		dc.b 6
-		dc.b $E4, 1, 0,	0, $F8
-		dc.b $E4, 1, 8,	0, 0
-		dc.b $F4, 3, $20, 2, $F8
-		dc.b $F4, 3, $28, 2, 0
-		dc.b $D4, 1, 0,	8, $F8
-		dc.b $D4, 1, 8,	8, 0
-		even
+Map_0385:
+Map_0385_0: 	dc.w Map_0385_8-Map_0385
+Map_0385_2: 	dc.w Map_0385_27-Map_0385
+Map_0385_4: 	dc.w Map_0385_3C-Map_0385
+Map_0385_6: 	dc.w Map_0385_47-Map_0385
+Map_0385_8: 	dc.b $6
+	dc.b $E4, $1, $0, $0, $F8
+	dc.b $E4, $1, $8, $0, $0
+	dc.b $F4, $3, $20, $2, $F8
+	dc.b $F4, $3, $28, $2, $0
+	dc.b $D4, $1, $0, $6, $F8
+	dc.b $D4, $1, $8, $6, $0
+Map_0385_27: 	dc.b $4
+	dc.b $E4, $1, $0, $0, $F8
+	dc.b $E4, $1, $8, $0, $0
+	dc.b $F4, $3, $20, $2, $F8
+	dc.b $F4, $3, $28, $2, $0
+Map_0385_3C: 	dc.b $2
+	dc.b $F8, $1, $0, $8, $F8
+	dc.b $F8, $1, $8, $8, $0
+Map_0385_47: 	dc.b $6
+	dc.b $E4, $1, $0, $0, $F8
+	dc.b $E4, $1, $8, $0, $0
+	dc.b $F4, $3, $20, $2, $F8
+	dc.b $F4, $3, $28, $2, $0
+	dc.b $D4, $1, $0, $8, $F8
+	dc.b $D4, $1, $8, $8, $0
+	even
