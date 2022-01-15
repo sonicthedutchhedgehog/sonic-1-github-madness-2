@@ -89,7 +89,7 @@ Sonic_LookUp:
 ; ===========================================================================
 
 Sonic_Duck:
-		btst	#bitUp,(v_jpadhold2).w ; is down being pressed?
+		btst	#bitUp,(v_jpadhold2).w ; is up being pressed?
 		beq.s	Sonic_ResetScr	; if not, branch
 		move.b	#id_Duck,obAnim(a0) ; use "ducking" animation
 		cmpi.w	#8,(v_lookshift).w
