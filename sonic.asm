@@ -4,7 +4,7 @@
 ;
 ; Disassembly created by Hivebrain
 ; thanks to drx, Stealth and Esrael L.G. Neto
-
+; this disassembly is fucking balls
 ; ===========================================================================
 
 	cpu 68000
@@ -5953,13 +5953,15 @@ M_Card_LZ:	dc.b 9			; LABYRINTH
 		dc.b $F8, 5, 0,	$42, $24
 		dc.b $F8, 5, 0,	$1C, $34
 		even
-M_Card_MZ:	dc.b 6			; MARBLE
-		dc.b $F8, 5, 0,	$2A, $CF
-		dc.b $F8, 5, 0,	0, $E0
-		dc.b $F8, 5, 0,	$3A, $F0
-		dc.b $F8, 5, 0,	4, 0
-		dc.b $F8, 5, 0,	$26, $10
-		dc.b $F8, 5, 0,	$10, $20
+M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
+		dc.b $F8, 5, 0, $2E, $B0	; N
+		dc.b $F8, 5, 0, $10, $C0	; E
+		dc.b $F8, 5, 0, $32, $D0	; O
+		dc.b $F8, 0, 0, $56, $E0	; Space
+		dc.b $F8, 5, 0, $2A, $F0	; M
+		dc.b $F8, 1, 0, $20, $00	; I
+		dc.b $F8, 5, 0, $26, $08	; L
+		dc.b $F8, 5, 0, $22, $19	; K
 		even
 M_Card_SLZ:	dc.b 9			; STAR LIGHT
 		dc.b $F8, 5, 0,	$3E, $B4
@@ -6938,9 +6940,9 @@ Sonic_Main:	; Routine 0
 		move.b	#$18,obActWid(a0)
 		move.b	#4,obRender(a0)
 		; gotta go fast
-		move.l	#$69666420911,(v_sonspeedmax).w ; Sonic's top speed
-		move.l	#$69666420911,(v_sonspeedacc).w ; Sonic's acceleration
-		move.l	#$69666420911,(v_sonspeeddec).w ; Sonic's deceleration
+		move.w	#$800,($FFFFF760).w	; Sonic's Top Speed
+		move.w	#$C,($FFFFF762).w	; Sonic's acceleration
+		move.w	#$80,($FFFFF764).w	; Sonic's deceleration
 
 Sonic_Control:	; Routine 2
 		tst.w	(f_debugmode).w	; is debug cheat enabled?
@@ -7016,7 +7018,7 @@ MusicList2:
 ; Modes	for controlling	Sonic
 ; ---------------------------------------------------------------------------
 
-Sonic_MdNormal:
+Sonic_MdNormal: bsr.w   SCDPeelout
 		bsr.w	Sonic_Jump
 		bsr.w	Sonic_SlopeResist
 		bsr.w	Sonic_Move
@@ -7030,6 +7032,7 @@ Sonic_MdNormal:
 
 Sonic_MdJump:
 		bsr.w	Sonic_JumpHeight
+                bsr.w   Sonic_Jump_Dash
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
 		jsr	(ObjectFall).l
@@ -7056,6 +7059,7 @@ Sonic_MdRoll:
 
 Sonic_MdJump2:
 		bsr.w	Sonic_JumpHeight
+                bsr.w   Sonic_Jump_Dash
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
 		jsr	(ObjectFall).l
@@ -7093,8 +7097,24 @@ locret_13302:
 
 		include	"_incObj/Sonic LevelBound.asm"
 		include	"_incObj/Sonic Roll.asm"
+                include "peelout.asm"
 		include	"_incObj/Sonic Jump.asm"
 		include	"_incObj/Sonic JumpHeight.asm"
+Sonic_Jump_Dash:                                
+                cmpi.b  #2,$1C(a0)                ; is sonic rolling?
+                bne.s   Sonic_Jump_Dash_Rts       ; if not, branch
+                move.b  ($FFFFF603).w,d0          
+                andi.b  #$70,d0              
+                beq.w   Sonic_Jump_Dash_Rts      
+                move.w  #$BC,d0
+                jsr     (PlaySound_Special).l
+                move.w  #$F00,$10(a0)    
+                btst    #0,$22(a0)              
+                beq.s   Sonic_Jump_Dash_Rts
+                neg.w   $10(a0)
+
+Sonic_Jump_Dash_Rts:
+                rts
 		include	"_incObj/Sonic SlopeResist.asm"
 		include	"_incObj/Sonic RollRepel.asm"
 		include	"_incObj/Sonic SlopeRepel.asm"
