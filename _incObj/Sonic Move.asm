@@ -13,12 +13,12 @@ Sonic_Move:
 		bne.w	loc_12FEE
 		tst.w	$3E(a0)
 		bne.w	Sonic_ResetScr
-		btst	#bitR,(v_jpadhold2).w ; is right being pressed?
+		btst	#bitL,(v_jpadhold2).w ; is left being pressed?
 		beq.s	.notleft	; if not, branch
 		bsr.w	Sonic_MoveLeft
 
 .notleft:
-		btst	#bitL,(v_jpadhold2).w ; is left being pressed?
+		btst	#bitR,(v_jpadhold2).w ; is right being pressed?
 		beq.s	.notright	; if not, branch
 		bsr.w	Sonic_MoveRight
 
