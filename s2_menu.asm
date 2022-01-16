@@ -493,9 +493,9 @@ Menu_Reset_All_Emerald_Code_Counter:
 Menu_Code_Not_0xFF: 
                 rts               
 Code_Debug_Mode: 
-                dc.b    $01, $09, $09, $02, $01, $01, $02, $04, $FF
+                dc.b    $06, $09, $06, $09, $04, $02, $00, $00, $FF
 Code_All_Emeralds: 
-                dc.b    $04, $01, $02, $06, $FF
+                dc.b    $01, $09, $08, $04, $FF
 ;-------------------------------------------------------------------------------                 
 Offset_0x027040:
                 bsr.w   Offset_0x026F7A
