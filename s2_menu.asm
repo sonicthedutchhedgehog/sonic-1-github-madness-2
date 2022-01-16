@@ -493,7 +493,7 @@ Menu_Reset_All_Emerald_Code_Counter:
 Menu_Code_Not_0xFF: 
                 rts               
 Code_Debug_Mode: 
-                dc.b    $06, $09, $06, $09, $04, $02, $00, $00, $FF
+                dc.b    $02, $00, $02, $02, $FF
 Code_All_Emeralds: 
                 dc.b    $01, $09, $08, $04, $FF
 ;-------------------------------------------------------------------------------                 
