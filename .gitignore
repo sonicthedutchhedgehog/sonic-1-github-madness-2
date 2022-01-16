@@ -10,3 +10,6 @@ sonic.p
 _Output.txt
 _BinaryOutput.txt
 palette/Ending.bin.bak
+*.gs1
+*.gs2
+*.gs3
