@@ -5952,15 +5952,11 @@ M_Card_GHZ:	dc.b 9 			; GREEN HILL
 		dc.b $F8, 5, 0,	$26, $3C
 		even
 M_Card_LZ:	dc.b 9			; LABYRINTH
-		dc.b $F8, 5, 0,	$26, $BC
-		dc.b $F8, 5, 0,	0, $CC
-		dc.b $F8, 5, 0,	4, $DC
-		dc.b $F8, 5, 0,	$4A, $EC
-		dc.b $F8, 5, 0,	$3A, $FC
-		dc.b $F8, 1, 0,	$20, $C
-		dc.b $F8, 5, 0,	$2E, $14
-		dc.b $F8, 5, 0,	$42, $24
-		dc.b $F8, 5, 0,	$1C, $34
+		dc.b $F8, 5, 0, $0C, $80	; D
+		dc.b $F8, 5, 0, 0, $90		; A
+		dc.b $F8, 5, 0, $0C, $A0	; D
+		dc.b $F8, 5, 0, $0C, $B0	; D
+		dc.b $F8, 5, 0, $4A, $C0	; Y
 		even
 M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
 		dc.b $F8, 5, 0, $2E, $B0	; N
@@ -5973,39 +5969,38 @@ M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
 		dc.b $F8, 5, 0, $22, $19	; K
 		even
 M_Card_SLZ:	dc.b 9			; STAR LIGHT
-		dc.b $F8, 5, 0,	$3E, $B4
-		dc.b $F8, 5, 0,	$42, $C4
-		dc.b $F8, 5, 0,	0, $D4
-		dc.b $F8, 5, 0,	$3A, $E4
-		dc.b $F8, 5, 0,	$26, 4
-		dc.b $F8, 1, 0,	$20, $14
-		dc.b $F8, 5, 0,	$18, $1C
-		dc.b $F8, 5, 0,	$1C, $2C
-		dc.b $F8, 5, 0,	$42, $3C
+		dc.b $F8, 5, 0, $26, $80	; L
+		dc.b $F8, 5, 0, $32, $90	; O
+		dc.b $F8, 5, 0, $26, $A0	; L
+		dc.b $F8, 0, 0, $56, $B0	; Space
+		dc.b $F8, 5, 0, $26, $C0	; L
+		dc.b $F8, 1, 0, $20, $D0	; I
+		dc.b $F8, 5, 0, $18, $E0	; G
+		dc.b $F8, 5, 0, $1C, $E8	; H
+		dc.b $F8, 5, 0, $42, $8	; T
 		even
 M_Card_SYZ:	dc.b $A			; SPRING YARD
-		dc.b $F8, 5, 0,	$3E, $AC
-		dc.b $F8, 5, 0,	$36, $BC
-		dc.b $F8, 5, 0,	$3A, $CC
-		dc.b $F8, 1, 0,	$20, $DC
-		dc.b $F8, 5, 0,	$2E, $E4
-		dc.b $F8, 5, 0,	$18, $F4
-		dc.b $F8, 5, 0,	$4A, $14
-		dc.b $F8, 5, 0,	0, $24
-		dc.b $F8, 5, 0,	$3A, $34
-		dc.b $F8, 5, 0,	$C, $44
+		dc.b $F8, 5, 0, $3E, $80	; S
+		dc.b $F8, 5, 0, $36, $90	; P
+		dc.b $F8, 1, 0, $20, $A0	; I
+		dc.b $F8, 5, 0, $42, $A8	; T
+		dc.b $F8, 0, 0, $56, $B8	; Space
+		dc.b $F8, 5, 0, $4A, $C8	; Y
+		dc.b $F8, 5, 0, 0, $D8		; A
+		dc.b $F8, 5, 0, $3A, $E8	; R
+		dc.b $F8, 5, 0, $0C, $F8	; D
 		even
 M_Card_SBZ:	dc.b $A			; SCRAP BRAIN
-		dc.b $F8, 5, 0,	$3E, $AC
-		dc.b $F8, 5, 0,	8, $BC
-		dc.b $F8, 5, 0,	$3A, $CC
-		dc.b $F8, 5, 0,	0, $DC
-		dc.b $F8, 5, 0,	$36, $EC
-		dc.b $F8, 5, 0,	4, $C
-		dc.b $F8, 5, 0,	$3A, $1C
-		dc.b $F8, 5, 0,	0, $2C
-		dc.b $F8, 1, 0,	$20, $3C
-		dc.b $F8, 5, 0,	$2E, $44
+		dc.b $F8, 5, 0, 8, $80		; C
+		dc.b $F8, 5, 0, $3A, $90	; R
+		dc.b $F8, 5, 0, 0, $A0		; A
+		dc.b $F8, 5, 0, $36, $B0	; P
+		dc.b $F8, 0, 0, $56, $C0	; Space
+		dc.b $F8, 5, 0, 4, $D0		; B
+		dc.b $F8, 5, 0, $3A, $E0	; R
+		dc.b $F8, 5, 0, 0, $F0		; A
+		dc.b $F8, 1, 0, $20, $0	; I
+		dc.b $F8, 5, 0, $2E, $8	; N
 		even
 M_Card_Zone:	dc.b 4			; ZONE
 		dc.b $F8, 5, 0,	$4E, $E0
@@ -6038,11 +6033,7 @@ M_Card_Oval:	dc.b $D			; Oval
 		dc.b $C, 8, 0, $7C, $EC
 		even
 M_Card_FZ:	dc.b 5			; FINAL
-		dc.b $F8, 5, 0,	$14, $DC
-		dc.b $F8, 1, 0,	$20, $EC
-		dc.b $F8, 5, 0,	$2E, $F4
-		dc.b $F8, 5, 0,	0, 4
-		dc.b $F8, 5, 0,	$26, $14
+		dc.b $F8, 5, 0, $14, $80	; F
 		even
 
 Map_Over:	include	"_maps/Game Over.asm"
