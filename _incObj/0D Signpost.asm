@@ -38,6 +38,7 @@ Sign_Touch:	; Routine 2
 		bcs.s	.notouch
 		cmpi.w	#$20,d0		; is Sonic within $20 pixels of	the signpost?
 		bcc.s	.notouch	; if not, branch
+                move.b  #1,($FFFFF7AA).w ; Lock the screen
 		music	sfx_Signpost,0,0,0	; play signpost sound
 		clr.b	(f_timecount).w	; stop time counter
 		move.w	(v_limitright2).w,(v_limitleft2).w ; lock screen position
@@ -97,24 +98,24 @@ Sign_SparkPos:	dc.b -$18,-$10		; x-position, y-position
 ; ===========================================================================
 
 Sign_SonicRun:	; Routine 6
-		tst.w	(v_debuguse).w	; is debug mode	on?
-		bne.w	locret_ECEE	; if yes, branch
-		btst	#1,(v_player+obStatus).w
-		bne.s	loc_EC70
-		move.b	#1,(f_lockctrl).w ; lock controls
-		move.w	#btnR<<8,(v_jpadhold2).w ; make Sonic run to the right
+		;tst.w	(v_debuguse).w	; is debug mode	on?
+		;bne.w	locret_ECEE	; if yes, branch
+		;btst	#1,(v_player+obStatus).w
+		;bne.s	loc_EC70
+		;move.b	#1,(f_lockctrl).w ; lock controls
+		;move.w	#btnR<<8,(v_jpadhold2).w ; make Sonic run to the right
 
 loc_EC70:
-		tst.b	(v_player).w
-		beq.s	loc_EC86
-		move.w	(v_player+obX).w,d0
-		move.w	(v_limitright2).w,d1
-		addi.w	#$128,d1
-		cmp.w	d1,d0
-		bcs.s	locret_ECEE
+		;tst.b	(v_player).w
+		;beq.s	loc_EC86
+		;move.w	(v_player+obX).w,d0
+		;move.w	(v_limitright2).w,d1
+		;addi.w	#$128,d1
+		;cmp.w	d1,d0
+		;bcs.s	locret_ECEE
 
 loc_EC86:
-		addq.b	#2,obRoutine(a0)
+		;addq.b	#2,obRoutine(a0)
 
 
 ; ---------------------------------------------------------------------------
@@ -125,6 +126,7 @@ loc_EC86:
 
 
 GotThroughAct:
+                move.b  #1,($FFFFF5C0).w ; Set victory animation flag
 		tst.b	(v_objspace+$5C0).w
 		bne.s	locret_ECEE
 		move.w	(v_limitright2).w,(v_limitleft2).w
