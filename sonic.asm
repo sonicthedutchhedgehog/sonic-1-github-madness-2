@@ -18,8 +18,9 @@
 
 	cpu 68000
 
-zeroOffsetOptimization = 0
+zeroOffsetOptimization = 1
 ;	| If 1, makes a handful of zero-offset instructions smaller
+;       made it 1 for faster gameplay - beta filter
 
 	include "MacroSetup.asm"
 	include	"Constants.asm"
@@ -601,7 +602,11 @@ VBlank:
 		jsr	VBla_Index(pc,d0.w)
 
 VBla_Music:
-		jsr	(UpdateMusic).l
+		move    #$2300,sr       ; enable interrupts (we can accept horizontal interrupts from now on)
+                bset    #0,($FFFFF64F).w    ; set "SMPS running flag"
+                bne.s   VBla_Exit       ; if it was set already, don't call another instance of SMPS
+                jsr     UpdateMusic     ; run SMPS
+                clr.b   ($FFFFF64F).w       ; reset "SMPS running flag"
 
 VBla_Exit:
 		addq.l	#1,(v_vbla_count).w
@@ -637,8 +642,6 @@ VBla_00:
 
 .notPAL:
 		move.w	#1,(f_hbla_pal).w ; set HBlank flag
-		stopZ80
-		waitZ80
 		tst.b	(f_wtr_state).w	; is water above top of screen?
 		bne.s	.waterabove 	; if yes, branch
 
@@ -650,7 +653,6 @@ VBla_00:
 
 .waterbelow:
 		move.w	(v_hbla_hreg).w,(a5)
-		startZ80
 		bra.w	VBla_Music
 ; ===========================================================================
 
@@ -688,8 +690,6 @@ VBla_10:
 		beq.w	VBla_0A		; if yes, branch
 
 VBla_08:
-		stopZ80
-		waitZ80
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w
 		bne.s	.waterabove
@@ -705,23 +705,13 @@ VBla_08:
 
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		tst.b	(f_sonframechg).w ; has Sonic's sprite changed?
-		beq.s	.nochg		; if not, branch
-
-		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic ; load new Sonic gfx
-		move.b	#0,(f_sonframechg).w
+		jsr	(ProcessDMAQueue).l
 
 .nochg:
-		startZ80
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
 		movem.l	(v_fg_scroll_flags).w,d0-d1
 		movem.l	d0-d1,(v_fg_scroll_flags_dup).w
-		cmpi.b	#96,(v_hbla_line).w
-		bhs.s	Demo_Time
-		move.b	#1,($FFFFF64F).w
-		addq.l	#4,sp
-		bra.w	VBla_Exit
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to	run a demo for an amount of time
@@ -746,19 +736,12 @@ Demo_Time:
 ; ===========================================================================
 
 VBla_0A:
-		stopZ80
-		waitZ80
 		bsr.w	ReadJoypads
 		writeCRAM	v_pal_dry,$80,0
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
 		bsr.w	PalCycle_SS
-		tst.b	(f_sonframechg).w ; has Sonic's sprite changed?
-		beq.s	.nochg		; if not, branch
-
-		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic ; load new Sonic gfx
-		move.b	#0,(f_sonframechg).w
+		jsr	(ProcessDMAQueue).l
 
 .nochg:
 		tst.w	(v_demolength).w	; is there time left on the demo?
@@ -770,8 +753,6 @@ VBla_0A:
 ; ===========================================================================
 
 VBla_0C:
-		stopZ80
-		waitZ80
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w
 		bne.s	.waterabove
@@ -786,13 +767,9 @@ VBla_0C:
 		move.w	(v_hbla_hreg).w,(a5)
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		tst.b	(f_sonframechg).w
-		beq.s	.nochg
-		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic
-		move.b	#0,(f_sonframechg).w
+		jsr	(ProcessDMAQueue).l
 
 .nochg:
-		startZ80
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
 		movem.l	(v_fg_scroll_flags).w,d0-d1
@@ -818,17 +795,11 @@ VBla_12:
 ; ===========================================================================
 
 VBla_16:
-		stopZ80
-		waitZ80
 		bsr.w	ReadJoypads
 		writeCRAM	v_pal_dry,$80,0
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
-		tst.b	(f_sonframechg).w
-		beq.s	.nochg
-		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic
-		move.b	#0,(f_sonframechg).w
+		jsr	(ProcessDMAQueue).l
 
 .nochg:
 		tst.w	(v_demolength).w
@@ -842,8 +813,6 @@ VBla_16:
 
 
 sub_106E:
-		stopZ80
-		waitZ80
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w ; is water above top of screen?
 		bne.s	.waterabove	; if yes, branch
@@ -856,8 +825,7 @@ sub_106E:
 .waterbelow:
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
-		rts	
+		rts
 ; End of function sub_106E
 
 ; ---------------------------------------------------------------------------
@@ -910,20 +878,9 @@ HBlank:
 		move.l	(a0)+,(a1)
 		move.w	#$8A00+223,4(a1) ; reset HBlank register
 		movem.l	(sp)+,a0-a1
-		tst.b	($FFFFF64F).w
-		bne.s	loc_119E
 
 .nochg:
-		rte	
-; ===========================================================================
-
-loc_119E:
-		clr.b	($FFFFF64F).w
-		movem.l	d0-a6,-(sp)
-		bsr.w	Demo_Time
-		jsr	(UpdateMusic).l
-		movem.l	(sp)+,d0-a6
-		rte	
+		rte
 ; End of function HBlank
 
 ; ---------------------------------------------------------------------------
@@ -1073,7 +1030,7 @@ ClearScreen:
 
 		lea	(v_spritetablebuffer).w,a1
 		moveq	#0,d0
-		move.w	#($280/4),d1	; This should be ($280/4)-1, leading to a slight bug (first bit of v_pal_water is cleared)
+		move.w	#($280/4)-1,d1	; This should be ($280/4)-1, leading to a slight bug (first bit of v_pal_water is cleared)
 
 .clearsprites:
 		move.l	d0,(a1)+
@@ -1081,7 +1038,7 @@ ClearScreen:
 
 		lea	(v_hscrolltablebuffer).w,a1
 		moveq	#0,d0
-		move.w	#($400/4),d1	; This should be ($400/4)-1, leading to a slight bug (first bit of the Sonic object's RAM is cleared)
+		move.w	#($400/4)-1,d1	; This should be ($400/4)-1, leading to a slight bug (first bit of the Sonic object's RAM is cleared)
 
 .clearhscroll:
 		move.l	d0,(a1)+
@@ -1097,20 +1054,25 @@ ClearScreen:
 
 
 SoundDriverLoad:
-		nop	
-		stopZ80
-		resetZ80
-		lea	(Kos_Z80).l,a0	; load sound driver
-		lea	(z80_ram).l,a1	; target Z80 RAM
-		bsr.w	KosDec		; decompress
-		resetZ80a
-		nop	
-		nop	
-		nop	
-		nop	
-		resetZ80
-		startZ80
-		rts	
+		nop
+                move.w #$100,d0
+                move.w d0,($A11100).l
+                move.w d0,($A11200).l
+                lea    (MegaPCM).l,a0
+                lea    ($A00000).l,a1
+                move.w #(MegaPCM_End-MegaPCM)-1,d1
+
+    .load:      move.b (a0)+,(a1)+
+                dbf    d1,.load
+                moveq  #0,d1
+                move.w d1,($A11200).l
+                nop
+                nop
+                nop
+                nop
+                move.w d0,($A11200).l
+                move.w d1,($A11100).l
+                rts
 ; End of function SoundDriverLoad
 
 		include	"_incObj/sub PlaySound.asm"
@@ -1144,6 +1106,8 @@ Tilemap_Cell:
 		dbf	d2,Tilemap_Line	; next line
 		rts	
 ; End of function TilemapToVRAM
+
+                include "DMA-Queue.asm"
 
 		include	"_inc/Nemesis Decompression.asm"
 
