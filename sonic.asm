@@ -7087,6 +7087,8 @@ Sonic_Jump_Dash:
                 beq.w   Sonic_Jump_Dash_Rts      
                 move.w  #$BC,d0
                 jsr     (PlaySound_Special).l
+                move.b	#$8C,(z80_dac_sample).l	; Queue Sega PCM
+                jsr    PlaySample
                 move.w  #$F00,$10(a0)    
                 btst    #0,$22(a0)              
                 beq.s   Sonic_Jump_Dash_Rts

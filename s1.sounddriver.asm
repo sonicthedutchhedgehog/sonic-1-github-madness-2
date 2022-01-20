@@ -628,7 +628,17 @@ CycleSoundQueue:
 
 
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
-
+; ---------------------------------------------------------------------------
+; Subroutine to    play a DAC sample
+; ---------------------------------------------------------------------------
+ 
+PlaySample:
+    move.w    #$100,($A11100).l    ; stop the Z80
+penis:   btst    #0,($A11100).l
+    bne.s    penis
+    move.b    d0,$A01FFF
+    move.w    #0,($A11100).l
+    rts
 ; Sound_ChkValue:
 PlaySoundID:
 		moveq	#0,d7
