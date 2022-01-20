@@ -705,7 +705,11 @@ VBla_08:
 
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		jsr	(ProcessDMAQueue).l
+		tst.b	(f_sonframechg).w ; has Sonic's sprite changed?
+		beq.s	.nochg		; if not, branch
+
+		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic ; load new Sonic gfx
+		move.b	#0,(f_sonframechg).w
 
 .nochg:
 		movem.l	(v_screenposx).w,d0-d7
@@ -741,7 +745,11 @@ VBla_0A:
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		bsr.w	PalCycle_SS
-		jsr	(ProcessDMAQueue).l
+		tst.b	(f_sonframechg).w ; has Sonic's sprite changed?
+		beq.s	.nochg		; if not, branch
+
+		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic ; load new Sonic gfx
+		move.b	#0,(f_sonframechg).w
 
 .nochg:
 		tst.w	(v_demolength).w	; is there time left on the demo?
@@ -767,8 +775,10 @@ VBla_0C:
 		move.w	(v_hbla_hreg).w,(a5)
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		jsr	(ProcessDMAQueue).l
-
+		tst.b	(f_sonframechg).w
+		beq.s	.nochg
+		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic
+		move.b	#0,(f_sonframechg).w
 .nochg:
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
@@ -799,7 +809,11 @@ VBla_16:
 		writeCRAM	v_pal_dry,$80,0
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		jsr	(ProcessDMAQueue).l
+		startZ80
+		tst.b	(f_sonframechg).w
+		beq.s	.nochg
+		writeVRAM	v_sgfx_buffer,$2E0,vram_sonic
+		move.b	#0,(f_sonframechg).w
 
 .nochg:
 		tst.w	(v_demolength).w
