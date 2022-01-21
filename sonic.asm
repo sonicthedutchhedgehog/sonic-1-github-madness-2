@@ -5930,12 +5930,16 @@ M_Card_GHZ:	dc.b 9 			; GREEN HILL
 		dc.b $F8, 5, 0,	$26, $2C
 		dc.b $F8, 5, 0,	$26, $3C
 		even
-M_Card_LZ:	dc.b 9			; LABYRINTH
-		dc.b $F8, 5, 0, $0C, $80	; D
-		dc.b $F8, 5, 0, 0, $90		; A
-		dc.b $F8, 5, 0, $0C, $A0	; D
-		dc.b $F8, 5, 0, $0C, $B0	; D
-		dc.b $F8, 5, 0, $4A, $C0	; Y
+M_Card_LZ:	dc.b 9	;  LABYRINTH | YTPM  ELF
+		dc.b $F8, 5, 0, $4A, $80	; Y
+		dc.b $F8, 5, 0, $42, $90	; T
+		dc.b $F8, 5, 0, $36, $A0	; P
+		dc.b $F8, 5, 0, $2A, $B0	; M
+		dc.b $F8, 0, 0, $56, $C0	; Space
+		dc.b $F8, 0, 0, $56, $D0	; Space
+		dc.b $F8, 5, 0, $10, $E0	; E
+		dc.b $F8, 5, 0, $26, $F0	; L
+		dc.b $F8, 5, 0, $14, $0	; F
 		even
 M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
 		dc.b $F8, 5, 0, $2E, $B0	; N
@@ -5981,11 +5985,11 @@ M_Card_SBZ:	dc.b $A			; SCRAP BRAIN
 		dc.b $F8, 5, 0, $3A, $F8	; R
 		dc.b $F8, 5, 0, $42, $8	; T
 		even
-M_Card_Zone:	dc.b 4			; ZONE
-		dc.b $F8, 5, 0,	$4E, $E0
-		dc.b $F8, 5, 0,	$32, $F0
-		dc.b $F8, 5, 0,	$2E, 0
-		dc.b $F8, 5, 0,	$10, $10
+M_Card_Zone:	dc.b 4	;  ZONE | ZONN
+		dc.b $F8, 5, 0, $4E, $80	; Z
+		dc.b $F8, 5, 0, $32, $90	; O
+		dc.b $F8, 5, 0, $2E, $A0	; N
+		dc.b $F8, 5, 0, $2E, $B0	; N
 		even
 M_Card_Act1:	dc.b 2			; ACT 1
 		dc.b 4,	$C, 0, $53, $EC
@@ -6029,22 +6033,25 @@ Map_Got:	dc.w M_Got_SonicHas-Map_Got
 		dc.w M_Card_Act1-Map_Got
 		dc.w M_Card_Act2-Map_Got
 		dc.w M_Card_Act3-Map_Got
-M_Got_SonicHas:	dc.b 8			; SONIC HAS
-		dc.b $F8, 5, 0,	$3E, $B8
-		dc.b $F8, 5, 0,	$32, $C8
-		dc.b $F8, 5, 0,	$2E, $D8
-		dc.b $F8, 1, 0,	$20, $E8
-		dc.b $F8, 5, 0,	8, $F0
-		dc.b $F8, 5, 0,	$1C, $10
-		dc.b $F8, 5, 0,	0, $20
-		dc.b $F8, 5, 0,	$3E, $30
-M_Got_Passed:	dc.b 6			; PASSED
-		dc.b $F8, 5, 0,	$36, $D0
-		dc.b $F8, 5, 0,	0, $E0
-		dc.b $F8, 5, 0,	$3E, $F0
-		dc.b $F8, 5, 0,	$3E, 0
-		dc.b $F8, 5, 0,	$10, $10
-		dc.b $F8, 5, 0,	$C, $20
+M_Got_SonicHas:	dc.b $A	;  SONIC HAS | ZZZZZZZZZZ
+		dc.b $F8, 5, 0, $4E, $B0	; Z
+		dc.b $F8, 5, 0, $4E, $C0	; Z
+		dc.b $F8, 5, 0, $4E, $D0	; Z
+		dc.b $F8, 5, 0, $4E, $E0	; Z
+		dc.b $F8, 5, 0, $4E, $F0	; Z
+		dc.b $F8, 5, 0, $4E, $0	; Z
+		dc.b $F8, 5, 0, $4E, $10	; Z
+		dc.b $F8, 5, 0, $4E, $20	; Z
+		dc.b $F8, 5, 0, $4E, $30	; Z
+		dc.b $F8, 5, 0, $4E, $40	; Z
+M_Got_Passed:	dc.b 7	;  PASSED | IT DONE
+		dc.b $F8, 1, 0, $20, $C0	; I
+		dc.b $F8, 5, 0, $42, $C8	; T
+		dc.b $F8, 0, 0, $56, $D8	; Space
+		dc.b $F8, 5, 0, $0C, $E8	; D
+		dc.b $F8, 5, 0, $32, $F8	; O
+		dc.b $F8, 5, 0, $2E, $8	; N
+		dc.b $F8, 5, 0, $10, $18	; E
 M_Got_Score:	dc.b 6			; SCORE
 		dc.b $F8, $D, 1, $4A, $B0
 		dc.b $F8, 1, 1,	$62, $D0
