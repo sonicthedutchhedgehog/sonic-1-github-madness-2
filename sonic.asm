@@ -5970,16 +5970,16 @@ M_Card_SYZ:	dc.b $A			; SPRING YARD
 		dc.b $F8, 5, 0, $0C, $F8	; D
 		even
 M_Card_SBZ:	dc.b $A			; SCRAP BRAIN
-		dc.b $F8, 5, 0, 8, $80		; C
+		dc.b $F8, 5, 0, 4, $80		; B
 		dc.b $F8, 5, 0, $3A, $90	; R
 		dc.b $F8, 5, 0, 0, $A0		; A
-		dc.b $F8, 5, 0, $36, $B0	; P
-		dc.b $F8, 0, 0, $56, $C0	; Space
-		dc.b $F8, 5, 0, 4, $D0		; B
-		dc.b $F8, 5, 0, $3A, $E0	; R
-		dc.b $F8, 5, 0, 0, $F0		; A
-		dc.b $F8, 1, 0, $20, $0	; I
-		dc.b $F8, 5, 0, $2E, $8	; N
+		dc.b $F8, 1, 0, $20, $B0	; I
+		dc.b $F8, 5, 0, $2E, $B8	; N
+		dc.b $F8, 0, 0, $56, $C8	; Space
+		dc.b $F8, 5, 0, $14, $D8	; F
+		dc.b $F8, 5, 0, 0, $E8		; A
+		dc.b $F8, 5, 0, $3A, $F8	; R
+		dc.b $F8, 5, 0, $42, $8	; T
 		even
 M_Card_Zone:	dc.b 4			; ZONE
 		dc.b $F8, 5, 0,	$4E, $E0
