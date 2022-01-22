@@ -77,7 +77,6 @@ ptr_mus90:	dc.l Music90
 ptr_mus91:	dc.l Music91
 ptr_mus92:	dc.l Music92
 ptr_mus93:	dc.l Music93
-ptr_mus94:	dc.l Music94
 ptr_musend
 ; ---------------------------------------------------------------------------
 ; Priority of sound. New music or SFX must have a priority higher than or equal
@@ -2489,8 +2488,6 @@ Music91:	binclude	"sound/music/Mus91 - Credits.bin"
 Music92:	binclude	"sound/music/Mus92 - Drowning.bin"
 		even
 Music93:	binclude	"sound/music/Mus93 - Get Emerald.bin"
-		even
-Music94:	binclude	"sound/music/doot.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound	effect pointers
