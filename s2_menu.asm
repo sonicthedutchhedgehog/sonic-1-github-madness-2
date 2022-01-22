@@ -29,7 +29,7 @@
 Slow_Motion_Flag =   ramaddr ( $FFFFFFE1 )
 Debug_Mode_Flag  =   ramaddr ( $FFFFFFE2 )
 
-Level_Select_Menu_snd   = $81
+Level_Select_Menu_snd   = $94
 Emerald_Snd             = $93
 Ring_Snd                = $B5
 Volume_Down             = $E0
