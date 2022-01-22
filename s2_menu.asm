@@ -25,11 +25,12 @@
 ;
 ; Não esqueça de incluir este asm em seu código com a diretiva include:
 ;               include 's2_menu.asm'
+; no more doot.bin for sound test music because that fucked it up
 ;===============================================================================
 Slow_Motion_Flag =   ramaddr ( $FFFFFFE1 )
 Debug_Mode_Flag  =   ramaddr ( $FFFFFFE2 )
 
-Level_Select_Menu_snd   = $94
+Level_Select_Menu_snd   = $81 
 Emerald_Snd             = $93
 Ring_Snd                = $B5
 Volume_Down             = $E0
