@@ -5919,16 +5919,15 @@ Map_Card:	dc.w M_Card_GHZ-Map_Card
 		dc.w M_Card_Act3-Map_Card
 		dc.w M_Card_Oval-Map_Card
 		dc.w M_Card_FZ-Map_Card
-M_Card_GHZ:	dc.b 9 			; GREEN HILL
-		dc.b $F8, 5, 0,	$18, $B4
-		dc.b $F8, 5, 0,	$3A, $C4
-		dc.b $F8, 5, 0,	$10, $D4
-		dc.b $F8, 5, 0,	$10, $E4
-		dc.b $F8, 5, 0,	$2E, $F4
-		dc.b $F8, 5, 0,	$1C, $14
-		dc.b $F8, 1, 0,	$20, $24
-		dc.b $F8, 5, 0,	$26, $2C
-		dc.b $F8, 5, 0,	$26, $3C
+M_Card_GHZ:	dc.b 8	;  GREEN HILL | IT PETER
+		dc.b $F8, 1, 0, $20, $80	; I
+		dc.b $F8, 5, 0, $42, $88	; T
+		dc.b $F8, 0, 0, $56, $98	; Space
+		dc.b $F8, 5, 0, $36, $A8	; P
+		dc.b $F8, 5, 0, $10, $B8	; E
+		dc.b $F8, 5, 0, $42, $C8	; T
+		dc.b $F8, 5, 0, $10, $D8	; E
+		dc.b $F8, 5, 0, $3A, $E8	; R
 		even
 M_Card_LZ:	dc.b 9	;  LABYRINTH | YTPM  ELF
 		dc.b $F8, 5, 0, $4A, $80	; Y
