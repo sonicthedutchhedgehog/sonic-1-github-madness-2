@@ -25,11 +25,12 @@
 ;
 ; Não esqueça de incluir este asm em seu código com a diretiva include:
 ;               include 's2_menu.asm'
+; no more doot.bin for sound test music because that fucked it up
 ;===============================================================================
 Slow_Motion_Flag =   ramaddr ( $FFFFFFE1 )
 Debug_Mode_Flag  =   ramaddr ( $FFFFFFE2 )
 
-Level_Select_Menu_snd   = $81
+Level_Select_Menu_snd   = $81 
 Emerald_Snd             = $93
 Ring_Snd                = $B5
 Volume_Down             = $E0
@@ -654,9 +655,9 @@ Menu_Level_Select_Text:
                 dc.b    $0E, _G, _R, _E, _E, _N, __, _H, _I, _L, _L, __, __, __, __, __
                 dc.b    $0E, _N, _E, _O, __, _M, _I, _L, _K, __, __, __, __, __, __, __
                 dc.b    $0E, _S, _P, _I, _T, __, _Y, _A, _R, _D, __, __, __, __, __, __
-                dc.b    $0E, _D, _A, _D, _D, _Y, __, __, __, __, __, __, __, __, __, __
-                dc.b    $0E, _C, _O, _O, _L, __, _L, _I, _G, _H, _T, __, __, __, __, __
-                dc.b    $0E, _C, _R, _A, _P, __, _B, _R, _A, _I, _N, __, __, __, __, __
+                dc.b    $0E, _Y, _T, _P, _M, _V, __, _E, _L, _F, __, __, __, __, __, __
+                dc.b    $0E, _L, _O, _L, __, _L, _I, _G, _H, _T, __, __, __, __, __, __
+                dc.b    $0E, _B, _R, _A, _I, _N, __, _F, _A, _R, _T, __, __, __, __, __
                 dc.b    $0E, _F, __, __, __, __, __, __, __, __, __, __, __, __, __, __   
                 dc.b    $0E, _S, _O, _N, _I, _C, __, _R, _O, _T, _A, _T, _I, _N, _G, __
                 dc.b    $0E, _F, _U, _N, _N, _Y, __, _E, _N, _D, _I, _N, _G, __, __, __
