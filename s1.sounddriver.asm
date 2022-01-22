@@ -690,21 +690,21 @@ ptr_flgend
 ; ---------------------------------------------------------------------------
 ; Sound_E1: PlaySega:
 PlaySegaSound:
-		move.b	#$88,(z80_dac_sample).l	; Queue Sega PCM
-		startZ80
-		move.w	#$11,d1
-; loc_71FC0:
-.busyloop_outer:
-		move.w	#-1,d0
-; loc_71FC4:
-.busyloop:
-		nop	
-		dbf	d0,.busyloop
+				lea	(SegaPCM).l,a2			; Load the SEGA PCM sample into a2. It's important that we use a2 since a0 and a1 are going to be used up ahead when reading the joypad ports 
+		move.l	#(SegaPCM_End-SegaPCM),d3			; Load the size of the SEGA PCM sample into d3 
+		move.b	#$2A,($A04000).l		; $A04000 = $2A -> Write to DAC channel	  
+PlayPCM_Loop:	  
+		move.b	(a2)+,($A04001).l		; Write the PCM data (contained in a2) to $A04001 (YM2612 register D0) 
+		move.w	#$14,d0				; Write the pitch ($14 in this case) to d0 
+		dbf	d0,*				; Decrement d0; jump to itself if not 0. (for pitch control, avoids playing the sample too fast)  
+		sub.l	#1,d3				; Subtract 1 from the PCM sample size 
+		beq.s	return_PlayPCM			; If d3 = 0, we finished playing the PCM sample, so stop playing, leave this loop, and 
+	
+		bra.s	PlayPCM_Loop			; Otherwise, continue playing PCM sample 
+return_PlayPCM: 
+		addq.w	#4,sp 
+		rts
 
-		dbf	d1,.busyloop_outer
-
-		addq.w	#4,sp	; Tamper return value so we don't return to caller
-		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Play music track $81-$9F
