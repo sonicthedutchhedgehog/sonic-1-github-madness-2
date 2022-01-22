@@ -8,10 +8,5 @@
 ; thank you for saying my mom will never get diabetes
 ; yo mama so ugly she died cuz sonic thinked she was eggman
 ; ok
-
-
-
-
-
-
-hjgfdsadfghjftufggvwh2bduyedwyhifbdwhifbvyuwevdhue2bdyhebvhfubeuf ehbdyuebdyuebrfebudbeyfbyu
+; hjgfdsadfghjftufggvwh2bduyedwyhifbdwhifbvyuwevdhue2bdyhebvhfubeuf ehbdyuebdyuebrfebudbeyfbyu
+; h
