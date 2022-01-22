@@ -77,6 +77,7 @@ ptr_mus90:	dc.l Music90
 ptr_mus91:	dc.l Music91
 ptr_mus92:	dc.l Music92
 ptr_mus93:	dc.l Music93
+ptr_mus94:	dc.l Music94
 ptr_musend
 ; ---------------------------------------------------------------------------
 ; Priority of sound. New music or SFX must have a priority higher than or equal
@@ -113,19 +114,6 @@ UpdateMusic:
 .updateloop:
 		btst	#0,(z80_bus_request).l		; Is the z80 busy?
 		bne.s	.updateloop			; If so, wait
-
-		btst	#7,(z80_dac_status).l		; Is DAC accepting new samples?
-		beq.s	.driverinput			; Branch if yes
-		startZ80
-		nop	
-		nop	
-		nop	
-		nop	
-		nop	
-		bra.s	UpdateMusic
-; ===========================================================================
-; loc_71B82:
-.driverinput:
 		lea	(v_snddriver_ram&$FFFFFF).l,a6
 		clr.b	f_voice_selector(a6)
 		tst.b	f_pausemusic(a6)		; is music paused?
@@ -221,7 +209,11 @@ UpdateMusic:
 		jsr	PSGUpdateTrack(pc)
 ; loc_71C44:
 DoStartZ80:
-		startZ80
+		move.b  ($A04000).l,d2
+                btst    #7,d2
+                bne.s   DoStartZ80
+                move.b  #$2A,($A04000).l
+                startZ80
 		rts	
 ; End of function UpdateMusic
 
@@ -267,8 +259,6 @@ DACUpdateTrack:
 		move.b	TrackSavedDAC(a5),d0	; Get sample
 		cmpi.b	#$80,d0			; Is it a rest?
 		beq.s	.locret			; Return if yes
-		btst	#3,d0			; Is bit 3 set (samples between $88-$8F)?
-		bne.s	.timpani		; Various timpani
 		move.b	d0,(z80_dac_sample).l
 ; locret_71CAA:
 .locret:
@@ -436,46 +426,50 @@ NoteTimeoutUpdate:
 ; End of function NoteTimeoutUpdate
 
 
-; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
-
-; sub_71DC6:
+; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
+ 
+; Vladikcomper: Fixed a programming error with stack usage
+ 
 DoModulation:
-		addq.w	#4,sp				; Do not return to caller (but see below)
-		btst	#3,TrackPlaybackControl(a5)	; Is modulation active?
-		beq.s	.locret				; Return if not
-		tst.b	TrackModulationWait(a5)	; Has modulation wait expired?
-		beq.s	.waitdone			; If yes, branch
-		subq.b	#1,TrackModulationWait(a5)	; Update wait timeout
-		rts	
+        btst    #3,(a5)     ; Is modulation active?
+        beq.s   .dontreturn ; Return if not
+        tst.b   $18(a5)     ; Has modulation wait expired?
+        beq.s   .waitdone   ; If yes, branch
+        subq.b  #1,$18(a5)  ; Update wait timeout
+       
+.dontreturn:
+        addq.w  #4,sp       ; ++ Do not return to caller (but see below)
+        rts
 ; ===========================================================================
-; loc_71DDA:
+
 .waitdone:
-		subq.b	#1,TrackModulationSpeed(a5)	; Update speed
-		beq.s	.updatemodulation		; If it expired, want to update modulation
-		rts	
+        subq.b  #1,$19(a5)  ; Update speed
+        beq.s   .updatemodulation   ; If it expired, want to update modulation
+        addq.w  #4,sp       ; ++ Do not return to caller (but see below)
+        rts
 ; ===========================================================================
-; loc_71DE2:
+
 .updatemodulation:
-		movea.l	TrackModulationPtr(a5),a0	; Get modulation data
-		move.b	1(a0),TrackModulationSpeed(a5)	; Restore modulation speed
-		tst.b	TrackModulationSteps(a5)	; Check number of steps
-		bne.s	.calcfreq			; If nonzero, branch
-		move.b	3(a0),TrackModulationSteps(a5)	; Restore from modulation data
-		neg.b	TrackModulationDelta(a5)	; Negate modulation delta
-		rts	
+        movea.l $14(a5),a0  ; Get modulation data
+        move.b  1(a0),$19(a5)   ; Restore modulation speed
+        tst.b   $1B(a5)     ; Check number of steps
+        bne.s   .calcfreq   ; If nonzero, branch
+        move.b  3(a0),$1B(a5)   ; Restore from modulation data
+        neg.b   $1A(a5)     ; Negate modulation delta
+        addq.w  #4,sp       ; ++ Do not return to caller (but see below)
+        rts
 ; ===========================================================================
-; loc_71DFE:
+ 
 .calcfreq:
-		subq.b	#1,TrackModulationSteps(a5)	; Update modulation steps
-		move.b	TrackModulationDelta(a5),d6	; Get modulation delta
-		ext.w	d6
-		add.w	TrackModulationVal(a5),d6	; Add cumulative modulation change
-		move.w	d6,TrackModulationVal(a5)	; Store it
-		add.w	TrackFreq(a5),d6		; Add note frequency to it
-		subq.w	#4,sp		; In this case, we want to return to caller after all
-; locret_71E16:
+        subq.b  #1,$1B(a5)  ; Update modulation steps
+        move.b  $1A(a5),d6  ; Get modulation delta
+        ext.w   d6
+        add.w   $1C(a5),d6  ; Add cumulative modulation change
+        move.w  d6,$1C(a5)  ; Store it
+        add.w   $10(a5),d6  ; Add note frequency to it
+
 .locret:
-		rts	
+        rts
 ; End of function DoModulation
 
 
@@ -635,7 +629,17 @@ CycleSoundQueue:
 
 
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
-
+; ---------------------------------------------------------------------------
+; Subroutine to    play a DAC sample
+; ---------------------------------------------------------------------------
+ 
+PlaySample:
+    move.w    #$100,($A11100).l    ; stop the Z80
+penis:   btst    #0,($A11100).l
+    bne.s    penis
+    move.b    d0,$A01FFF
+    move.w    #0,($A11100).l
+    rts
 ; Sound_ChkValue:
 PlaySoundID:
 		moveq	#0,d7
@@ -687,21 +691,21 @@ ptr_flgend
 ; ---------------------------------------------------------------------------
 ; Sound_E1: PlaySega:
 PlaySegaSound:
-		move.b	#$88,(z80_dac_sample).l	; Queue Sega PCM
-		startZ80
-		move.w	#$11,d1
-; loc_71FC0:
-.busyloop_outer:
-		move.w	#-1,d0
-; loc_71FC4:
-.busyloop:
-		nop	
-		dbf	d0,.busyloop
+				lea	(SegaPCM).l,a2			; Load the SEGA PCM sample into a2. It's important that we use a2 since a0 and a1 are going to be used up ahead when reading the joypad ports 
+		move.l	#(SegaPCM_End-SegaPCM),d3			; Load the size of the SEGA PCM sample into d3 
+		move.b	#$2A,($A04000).l		; $A04000 = $2A -> Write to DAC channel	  
+PlayPCM_Loop:	  
+		move.b	(a2)+,($A04001).l		; Write the PCM data (contained in a2) to $A04001 (YM2612 register D0) 
+		move.w	#$14,d0				; Write the pitch ($14 in this case) to d0 
+		dbf	d0,*				; Decrement d0; jump to itself if not 0. (for pitch control, avoids playing the sample too fast)  
+		sub.l	#1,d3				; Subtract 1 from the PCM sample size 
+		beq.s	return_PlayPCM			; If d3 = 0, we finished playing the PCM sample, so stop playing, leave this loop, and 
+	
+		bra.s	PlayPCM_Loop			; Otherwise, continue playing PCM sample 
+return_PlayPCM: 
+		addq.w	#4,sp 
+		rts
 
-		dbf	d1,.busyloop_outer
-
-		addq.w	#4,sp	; Tamper return value so we don't return to caller
-		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Play music track $81-$9F
@@ -1174,9 +1178,7 @@ StopSFX:
 		bne.s	.getfmpointer					; Branch if not
 		tst.b	v_spcsfx_fm4_track+TrackPlaybackControl(a6)	; Is special SFX playing?
 		bpl.s	.getfmpointer					; Branch if not
-		; DANGER! there is a missing 'movea.l	a5,a3' here, without which the
-		; code is broken. It is dangerous to do a fade out when a GHZ waterfall
-		; is playing its sound!
+		movea.l	a5,a3
 		lea	v_spcsfx_fm4_track(a6),a5
 		movea.l	v_special_voice_ptr(a6),a1	; Get special voice pointer
 		bra.s	.gotfmpointer
@@ -1383,9 +1385,7 @@ StopAllSound:
 		moveq	#0,d1		; FM3/FM6 normal mode, disable timers
 		jsr	WriteFMI(pc)
 		movea.l	a6,a0
-		; DANGER! This should be clearing all variables and track data, but misses the last $10 bytes of v_spcsfx_psg3_Track
-		; Remove the '-$10' to fix this.
-		move.w	#((v_spcsfx_track_ram_end-v_startofvariables-$10)/4)-1,d0	; Clear $390 bytes: all variables and most track data
+		move.w	#((v_spcsfx_track_ram_end-v_startofvariables)/4)-1,d0	; Clear $390 bytes: all variables and most track data
 ; loc_725B6:
 .clearramloop:
 		clr.l	(a0)+
@@ -1420,33 +1420,19 @@ InitMusicPlayback:
 		move.b	d4,v_fadein_counter(a6)
 		move.w	d5,v_soundqueue0(a6)
 		move.b	#$80,v_sound_id(a6)	; set music to $80 (silence)
-		; DANGER! This silences ALL channels, even the ones being used
-		; by SFX, and not music! .sendfmnoteoff does this already, and
-		; doesn't affect SFX channels, either.
-		; This should be replaced with an 'rts'.
-		jsr	FMSilenceAll(pc)
-		bra.w	PSGSilenceAll
-		; DANGER! InitMusicPlayback, and Sound_PlayBGM for that matter,
-		; don't do a very good job of setting up the music tracks.
-		; Tracks that aren't defined in a music file's header don't have
-		; their channels defined, meaning .sendfmnoteoff won't silence
-		; hardware properly. In combination with removing the above
-		; calls to FMSilenceAll/PSGSilenceAll, this will cause hanging
-		; notes.
-		; To fix this, I suggest using this code, instead of an 'rts':
-		;lea	v_music_track_ram+TrackVoiceControl(a6),a1
-		;lea	FMDACInitBytes(pc),a2
-		;moveq	#((v_music_fmdac_tracks_end-v_music_fmdac_tracks)/TrackSz)-1,d1		; 7 DAC/FM tracks
-		;bsr.s	.writeloop
-		;lea	PSGInitBytes(pc),a2
-		;moveq	#((v_music_psg_tracks_end-v_music_psg_tracks)/TrackSz)-1,d1	; 3 PSG tracks
+		lea	v_music_track_ram+TrackVoiceControl(a6),a1
+		lea	FMDACInitBytes(pc),a2
+		moveq	#((v_music_fmdac_tracks_end-v_music_fmdac_tracks)/TrackSz)-1,d1		; 7 DAC/FM tracks
+		bsr.s	.writeloop
+		lea	PSGInitBytes(pc),a2
+		moveq	#((v_music_psg_tracks_end-v_music_psg_tracks)/TrackSz)-1,d1	; 3 PSG tracks
 
-;.writeloop:
-		;move.b	(a2)+,(a1)		; Write track's channel byte
-		;lea	TrackSz(a1),a1		; Next track
-		;dbf	d1,.writeloop		; Loop for all DAC/FM/PSG tracks
+.writeloop:
+		move.b	(a2)+,(a1)		; Write track's channel byte
+		lea	TrackSz(a1),a1		; Next track
+		dbf	d1,.writeloop		; Loop for all DAC/FM/PSG tracks
 
-		;rts
+		rts
 	
 ; End of function InitMusicPlayback
 
@@ -1629,9 +1615,9 @@ WriteFMI:
 		btst	#7,d2		; Is FM busy?
 		bne.s	WriteFMI	; Loop if so
 		move.b	d0,(ym2612_a0).l
+		nop
 		nop	
-		nop	
-		nop	
+		nop
 ; loc_72746:
 .waitloop:
 		move.b	(ym2612_a0).l,d2
@@ -1882,13 +1868,9 @@ SendPSGNoteOff:
 		move.b	TrackVoiceControl(a5),d0	; PSG channel to change
 		ori.b	#$1F,d0				; Maximum volume attenuation
 		move.b	d0,(psg_input).l
-		; DANGER! If InitMusicPlayback doesn't silence all channels, there's the
-		; risk of music accidentally playing noise because it can't detect if
-		; the PSG4/noise channel needs muting on track initialisation.
-		; S&K's driver fixes it by doing this:
-		;cmpi.b	#$DF,d0				; Are stopping PSG3?
-		;bne.s	locret_729B4
-		;move.b	#$FF,(psg_input).l		; If so, stop noise channel while we're at it
+		cmpi.b	#$DF,d0				; Are stopping PSG3?
+		bne.s	locret_729B4
+		move.b	#$FF,(psg_input).l		; If so, stop noise channel while we're at it
 
 locret_729B4:
 		rts	
@@ -2468,7 +2450,7 @@ cfOpF9:
 		bra.w	WriteFMI
 ; ===========================================================================
 
-Kos_Z80:	include		"sound/z80.asm"
+              	include		"MegaPCM.asm"
 
 Music81:	binclude	"sound/music/Mus81 - GHZ.bin"
 		even
@@ -2507,6 +2489,8 @@ Music91:	binclude	"sound/music/Mus91 - Credits.bin"
 Music92:	binclude	"sound/music/Mus92 - Drowning.bin"
 		even
 Music93:	binclude	"sound/music/Mus93 - Get Emerald.bin"
+		even
+Music94:	binclude	"sound/music/doot.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound	effect pointers
