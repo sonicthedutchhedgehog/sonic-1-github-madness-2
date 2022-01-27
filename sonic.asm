@@ -2212,7 +2212,7 @@ Tit_ClrObj2:
 		move.b	#id_PSBTM,(v_objspace+$C0).w ; load "TM" object
 		move.b	#3,(v_objspace+$C0+obFrame).w
 .isjap:
-		move.b	#id_PSBTM,(v_objspace+$100).w ; load object which hides part of Sonic
+		;move.b	#id_PSBTM,(v_objspace+$100).w ; load object which hides part of Sonic
 		move.b	#2,(v_objspace+$100+obFrame).w
 		jsr	(ExecuteObjects).l
 		bsr.w	DeformLayers
@@ -3016,7 +3016,7 @@ Level_MainLoop:
 		bsr.w	PauseGame
 		move.b	#8,(v_vbla_routine).w
 		bsr.w	WaitForVBla
-		addq.w	#1,(v_framecount).w ; add 1 to level timer
+		addq.w	#0,(v_framecount).w ; add 0 to level timer
 		bsr.w	MoveSonicInDemo
 		bsr.w	LZWaterFeatures
 		jsr	(ExecuteObjects).l
