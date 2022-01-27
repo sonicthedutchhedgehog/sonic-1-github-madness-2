@@ -2237,6 +2237,7 @@ Tit_MainLoop:
 		move.w	(v_objspace+obX).w,d0
 		addq.w	#2,d0
 		move.w	d0,(v_objspace+obX).w ; move Sonic to the right
+                move.w  #0,(v_screenposx).w
 		cmpi.w	#$1C00,d0	; has Sonic object passed $1C00 on x-axis?
 		blo.s	Tit_ChkRegion	; if not, branch
 
