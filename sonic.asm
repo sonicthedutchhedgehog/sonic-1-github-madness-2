@@ -3016,7 +3016,7 @@ Level_MainLoop:
 		bsr.w	PauseGame
 		move.b	#8,(v_vbla_routine).w
 		bsr.w	WaitForVBla
-		;addq.w	 #1,(v_framecount).w ; add 1 to level timer
+		addq.w	#0,(v_framecount).w ; add 0 to level timer
 		bsr.w	MoveSonicInDemo
 		bsr.w	LZWaterFeatures
 		jsr	(ExecuteObjects).l
