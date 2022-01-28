@@ -14,9 +14,9 @@ psg_input:		equ $C00011
 
 ; Z80 addresses
 z80_ram:		equ $A00000	; start of Z80 RAM
-z80_dac3_pitch:		equ $A000EA
-z80_dac_status:		equ $A01FFD
-z80_dac_sample:		equ $A01FFF
+z80_dac3_pitch:		equ z80_ram+zSample3_Pitch
+z80_dac_status:		equ z80_ram+zDAC_Status
+z80_dac_sample:		equ z80_ram+zDAC_Sample
 z80_ram_end:		equ $A02000	; end of non-reserved Z80 RAM
 z80_version:		equ $A10001
 z80_port_1_data:	equ $A10002
