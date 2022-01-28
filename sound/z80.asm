@@ -219,18 +219,18 @@ zPlaySEGAPCMLoop:
 zPCM_Table:
 	dw	zDAC_Sample1	; Kick sample
 	dw	(zDAC_Sample1_End-zDAC_Sample1)
-	dw	0017h			; Pitch = 17h
+	dw	0019h			; Pitch = 19h
 	dw	0000h
 
 	dw	zDAC_Sample2	; Snare sample
 	dw	(zDAC_Sample2_End-zDAC_Sample2)
-	dw	0001h			; Pitch = 1h
+	dw	0006h			; Pitch = 6h
 	dw	0000h
 
 	dw	zDAC_Sample3	; Timpani sample
 	dw	(zDAC_Sample3_End-zDAC_Sample3)
 zSample3_Pitch:
-	dw	001Bh			; Pitch = 1Bh
+	dw	0020h			; Pitch = 20h
 	dw	0000h
 
 
