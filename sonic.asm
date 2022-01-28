@@ -514,17 +514,18 @@ ErrorText:	dc.w .exception-ErrorText, .bus-ErrorText
 		dc.w .trapv-ErrorText, .privilege-ErrorText
 		dc.w .trace-ErrorText, .line1010-ErrorText
 		dc.w .line1111-ErrorText
-.exception:	dc.b "ERROR EXCEPTION    "
+		; enjoy these useless error texts
+.exception:	dc.b "ERROR SEXCEPTION   "
 .bus:		dc.b "BUS ERROR          "
-.address:	dc.b "ADDRESS ERROR      "
-.illinstruct:	dc.b "ILLEGAL INSTRUCTION"
+.address:	dc.b "DRESS ERROR        "
+.illinstruct:	dc.b "GAL INSTRUCTION    "
 .zerodivide:	dc.b "@ERO DIVIDE        "
-.chkinstruct:	dc.b "CHK INSTRUCTION    "
-.trapv:		dc.b "TRAPV INSTRUCTION  "
+.chkinstruct:	dc.b "420 INSTRUCTION    "
+.trapv:		dc.b "TRAP INSTRUCTION   "
 .privilege:	dc.b "PRIVILEGE VIOLATION"
 .trace:		dc.b "TRACE              "
-.line1010:	dc.b "LINE 1010 EMULATOR "
-.line1111:	dc.b "LINE 1111 EMULATOR "
+.line1010:	dc.b "LINE 6969 EMULATOR "
+.line1111:	dc.b "LINE FUCK EMULATOR "
 		even
 
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
