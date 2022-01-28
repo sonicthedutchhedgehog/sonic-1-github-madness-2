@@ -55,9 +55,9 @@ MegaPCM:
 ; DAC Samples Table
 ; ---------------------------------------------------------------
 
-	DAC_Entry	$01, Kick, dpcm			; $81	- Kick
-	DAC_Entry	$01, Snare, dpcm		; $82	- Snare
-	DAC_Entry	$01, Timpani, dpcm	        ; $83   - Timpani
+	DAC_Entry	$19, Kick, dpcm			; $81	- Kick
+	DAC_Entry	$06, Snare, dpcm		; $82	- Snare
+	DAC_Entry	$20, Timpani, dpcm	        ; $83   - Timpani
 	dc.l    0,0             		        ; $84	- <Free>
 	dc.l	0,0					; $85	- <Free>
 	dc.l	0,0					; $86	- <Free>
