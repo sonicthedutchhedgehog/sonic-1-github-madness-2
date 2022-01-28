@@ -55,17 +55,17 @@ MegaPCM:
 ; DAC Samples Table
 ; ---------------------------------------------------------------
 
-	DAC_Entry	$01, Kick, dpcm			; $81	- Kick
-	DAC_Entry	$01, Snare, dpcm		; $82	- Snare
-	DAC_Entry	$01, Timpani, dpcm	        ; $83   - Timpani
+	DAC_Entry	$01, fuckyou, pcm+pri			; $81	- Kick
+	DAC_Entry	$01, fuckyou, pcm+pri		; $82	- Snare
+	DAC_Entry	$01, fuckyou, pcm+pri	        ; $83   - Timpani
 	dc.l    0,0             		        ; $84	- <Free>
 	dc.l	0,0					; $85	- <Free>
 	dc.l	0,0					; $86	- <Free>
 	dc.l	0,0					; $87	- <Free>
-	DAC_Entry	$01, Timpani, dpcm		; $88	- Hi-Timpani
-	DAC_Entry	$01, Timpani, dpcm		; $89	- Mid-Timpani
-	DAC_Entry	$01, Timpani, dpcm		; $8A	- Mid-Low-Timpani
-	DAC_Entry	$01, Timpani, dpcm		; $8B	- Low-Timpani
+	DAC_Entry	$01, fuckyou, pcm+pri		; $88	- Hi-Timpani
+	DAC_Entry	$01, fuckyou, pcm+pri		; $89	- Mid-Timpani
+	DAC_Entry	$01, fuckyou, pcm+pri		; $8A	- Mid-Low-Timpani
+	DAC_Entry	$01, fuckyou, pcm+pri		; $8B	- Low-Timpani
         DAC_Entry       $01, fuckyou, pcm+pri           ; $8C - FUCK YOU
 
 MegaPCM_End:
