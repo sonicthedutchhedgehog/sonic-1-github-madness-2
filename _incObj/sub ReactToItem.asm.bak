@@ -274,7 +274,7 @@ HurtSonic:
 		move.b	#4,$24(a0)
 		bsr.w	Sonic_ResetOnFloor
 		bset	#1,$22(a0)
-		move.w	#-$F00,$12(a0)	; make Sonic bounce away from the object
+		move.w	#-$A00,$12(a0)	; make Sonic bounce away from the object
 		move.w	#-$900,$10(a0)
 		move.b	#$3F,0(a1)	; load explosion object
 		move.w	8(a0),8(a1)
