@@ -88,7 +88,7 @@ SonAni_Death:	dc.b 3,	fr_Death, afEnd
 		even
 SonAni_Shrink:	dc.b 3,	fr_Shrink1, fr_Shrink2, fr_Shrink3, fr_Shrink4, fr_Shrink5, fr_Null, afBack, 1
 		even
-SonAni_Hurt:	dc.b 3,	fr_Injury, afEnd
+SonAni_Hurt:	dc.b 1,	$58, $59, $5A, $5B, $5C, $5D, afEnd
 		even
 SonAni_WaterSlide:
 		dc.b 7, fr_Injury, fr_WaterSlide, afEnd
