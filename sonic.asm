@@ -1,5 +1,5 @@
 ;  =========================================================================
-; |           Sonic the Hedgehog Disassembly for Sega Mega Drive            |
+; |           Luigi For The Xbox 1 Dissasembly                              |
 ;  =========================================================================
 ;
 ; Disassembly created by Hivebrain
@@ -518,12 +518,12 @@ ErrorText:	dc.w .exception-ErrorText, .bus-ErrorText
 .exception:	dc.b "ERROR SEXCEPTION   "
 .bus:		dc.b "BUS ERROR          "
 .address:	dc.b "DRESS ERROR        "
-.illinstruct:	dc.b "GAL INSTRUCTION    "
+.illinstruct:	dc.b "NO WAY? NO WAY!    "
 .zerodivide:	dc.b "@ERO DIVIDE        "
 .chkinstruct:	dc.b "420 INSTRUCTION    "
 .trapv:		dc.b "TRAP INSTRUCTION   "
 .privilege:	dc.b "PRIVILEGE VIOLATION"
-.trace:		dc.b "TRACE              "
+.trace:		dc.b "SKILL ERROR        "
 .line1010:	dc.b "LINE 6969 EMULATOR "
 .line1111:	dc.b "LINE FUCK EMULATOR "
 		even
