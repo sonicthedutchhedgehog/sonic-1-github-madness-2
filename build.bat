@@ -1,3 +1,4 @@
+// MEGA PLAY COMPILER WHEN
 @ECHO OFF
 color 02
 REM // make sure we can write to the file s1built.bin
