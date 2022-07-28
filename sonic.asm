@@ -34,7 +34,8 @@ AddressSRAM	  = 3	; 0 = odd+even; 2 = even only; 3 = odd only
 ; Change to 0 to build the original version of the game, dubbed REV00
 ; Change to 1 to build the later vesion, dubbed REV01, which includes various bugfixes and enhancements
 ; Change to 2 to build the version from Sonic Mega Collection, dubbed REVXB, which fixes the infamous "spike bug"
-Revision	  = 1
+Revision	  = 2
+;                 changed to 2 for no spike bug (cope)
 
 ZoneCount	  = 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
@@ -123,7 +124,7 @@ loc_E0:
 		dc.l ErrorTrap
 	endif
 Console:	dc.b "SEGA MEGA DRIVE " ; Hardware system ID (Console name)
-_Date:		dc.b "(C)SEGA 1991.APR" ; Copyright holder and release date (generally year)
+_Date:		dc.b "(C)GHM2-TEAM 2022.JUL" ; Copyright holder and release date (generally year)
 Title_Local:	dc.b "SONIC 1 GITHUB           MADNESS 2              " ; Domestic name
 Title_Int:	dc.b "SONIC 1 GITHUB           MADNESS 2              " ; International name
 Serial:		if Revision=0
