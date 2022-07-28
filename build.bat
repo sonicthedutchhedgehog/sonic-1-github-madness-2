@@ -1,4 +1,4 @@
-// mega play compiler when
+REM // SOMEONE ADD A MEGA PLAY COMPILER SO WE CAN HAVE GITHUB MADNESS 2 ARCADE EDITION AJKYGSYAGHSFGHSFGHSJ
 @ECHO OFF
 color 02
 REM // make sure we can write to the file s1built.bin
