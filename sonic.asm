@@ -124,7 +124,7 @@ loc_E0:
 		dc.l ErrorTrap
 	endif
 Console:	dc.b "SEGA MEGA DRIVE " ; Hardware system ID (Console name)
-_Date:		dc.b "(C)GHM2-TEAM 2022.JUL" ; Copyright holder and release date (generally year)
+_Date:		dc.b "(C)SEGA 1991.APR" ; Copyright holder and release date (generally year)
 Title_Local:	dc.b "SONIC 1 GITHUB           MADNESS 2              " ; Domestic name
 Title_Int:	dc.b "SONIC 1 GITHUB           MADNESS 2              " ; International name
 Serial:		if Revision=0
