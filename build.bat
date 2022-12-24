@@ -3,11 +3,11 @@ REM // SOMEONE ADD A MEGA PLAY COMPILER SO WE CAN HAVE GITHUB MADNESS 2 ARCADE E
 color 02
 REM // make sure we can write to the file s1built.bin
 REM // also make a backup to s1built.prev.bin
-IF NOT EXIST s1built.bin goto LABLNOCOPY
-IF EXIST s1built.prev.bin del s1built.prev.bin
-IF EXIST s1built.prev.bin goto LABLNOCOPY
-move /Y s1built.bin s1built.prev.bin
-IF EXIST s1built.bin goto LABLERROR2
+IF NOT EXIST s1ghm2.bin goto LABLNOCOPY
+IF EXIST s1ghm2.prev.bin del s1built.prev.bin
+IF EXIST s1ghm2.prev.bin goto LABLNOCOPY
+move /Y s1ghm2.bin s1ghm2.prev.bin
+IF EXIST s1ghm2.bin goto LABLERROR2
 :LABLNOCOPY
 
 REM // delete some intermediate assembler output just in case
@@ -47,8 +47,8 @@ IF EXIST sonic.p "AS/Win32/s1p2bin" %s1p2bin_args% sonic.p s1built.bin
 
 REM // done -- pause if we seem to have failed, then exit
 IF NOT EXIST sonic.p goto LABLPAUSE
-IF NOT EXIST s1built.bin goto LABLPAUSE
-fixheader s1built.bin
+IF NOT EXIST s1ghm2.bin goto LABLPAUSE
+fixheader s1ghm2.bin
 exit /b
 :LABLPAUSE
 
@@ -65,7 +65,7 @@ pause
 exit /b
 
 :LABLERROR2
-echo Failed to build because write access to s1built.bin was denied.
+echo Failed to build because write access to s1ghm2.bin was denied.
 pause
 
 exit /b
@@ -75,7 +75,7 @@ REM // display a noticeable message
 echo.
 echo *************************************************************************
 echo *                                                                       *
-echo *   There were build errors/warnings. See sonic.log for more details.   *
+echo *   Something got fucked up! See sonic.log for more details.            *
 echo *                                                                       *
 echo *************************************************************************
 echo.
