@@ -1,5 +1,5 @@
 ;  =========================================================================
-; |           Luigi For The Xbox 1 Dissasembly                              |
+; |           Mario for the PS4 Dissasembly                                 |
 ;  =========================================================================
 ;
 ; Disassembly created by Hivebrain
@@ -14,6 +14,7 @@
 ; ok ig
 ; also please go to the new asm file I created for discussions
 ; SonicFan214 was here
+; 127.0.0.1
 ; ==========================================================================
 
 	cpu 68000
@@ -34,6 +35,7 @@ AddressSRAM	  = 3	; 0 = odd+even; 2 = even only; 3 = odd only
 ; Change to 0 to build the original version of the game, dubbed REV00
 ; Change to 1 to build the later vesion, dubbed REV01, which includes various bugfixes and enhancements
 ; Change to 2 to build the version from Sonic Mega Collection, dubbed REVXB, which fixes the infamous "spike bug"
+; iT'S REV02 FUCKING DUMBASS
 Revision	  = 2
 ;                 changed to 2 for no spike bug (cope)
 
@@ -9311,3 +9313,5 @@ SoundDriver:	include "s1.sounddriver.asm"
 EndOfRom:    include "s2_menu.asm"
 
 		END
+
+; since you got down here, here's a secret: I play fnf
