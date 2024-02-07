@@ -335,7 +335,7 @@ CheckSumCheck:
 		bhs.s	.loop
 		movea.l	#Checksum,a1	; read the checksum
 		cmp.w	(a1),d1		; compare checksum in header to ROM
-		bne.w	CheckSumError	; if they don't match, branch
+		bne.w	CheckSumOk	; if they don't match, branch
 
 CheckSumOk:
 		lea	($FFFFFE00).w,a6
@@ -5935,15 +5935,13 @@ M_Card_GHZ:	dc.b 8	;  GREEN HILL | IT PETER
 		dc.b $F8, 5, 0, $3A, $E8	; R
 		even
 M_Card_LZ:	dc.b 9	;  LABYRINTH | YTPM  ELF
-		dc.b $F8, 5, 0, $4A, $80	; Y
-		dc.b $F8, 5, 0, $42, $90	; T
-		dc.b $F8, 5, 0, $36, $A0	; P
-		dc.b $F8, 5, 0, $2A, $B0	; M
-		dc.b $F8, 0, 0, $56, $C0	; Space
-		dc.b $F8, 0, 0, $56, $D0	; Space
-		dc.b $F8, 5, 0, $10, $E0	; E
-		dc.b $F8, 5, 0, $26, $F0	; L
-		dc.b $F8, 5, 0, $14, $0	; F
+		dc.b $F8, 5, 0, $2A, $80	; M
+		dc.b $F8, 1, 0, $20, $90	; I
+		dc.b $F8, 5, 0, 8, $98		; C
+		dc.b $F8, 5, 0, $1C, $A8	; H
+		dc.b $F8, 5, 0, 0, $B8		; A
+		dc.b $F8, 5, 0, $10, $C8	; E
+		dc.b $F8, 5, 0, $26, $D8	; L
 		even
 M_Card_MZ:	dc.b 8	;  MARBLE | NEO MILK
 		dc.b $F8, 5, 0, $2E, $B0	; N
